@@ -101,19 +101,4 @@ $(function() {
 
     // Wait for DOM to load before initalizing map
     google.maps.event.addDomListener(window, 'load', initializeGoogleMap);
-
-
-    // Blur image when scrolling
-    // $(window).on('scroll', function () {
-    //     var pixels = controls.$doc.scrollTop() / 100;
-
-    //     if (pixels > 5.0) {
-    //         return;
-    //     }
-
-    //     controls.$backgroundImage.css({
-    //         '-webkit-filter': 'blur(' + pixels + 'px)',
-    //         'filter': 'blur(' + pixels + 'px)' 
-    //     });
-    // });
 });
