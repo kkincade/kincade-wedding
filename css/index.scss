@@ -82,69 +82,135 @@ html {
             }
 
             &.interests-section  {
-                height: 800px;
 
                 .wedding-videos {
-                    margin: 0;
-                    padding: 0;
-                    height: 500px;
+                    margin: 10px auto 0 auto;
+                    max-width: 900px;
+                    padding: 10px 30px;
 
                     /* Make the video responsive */
                     .video-player {
+                        padding-bottom: 56.25%; /* 16:9 aspect ratio */
                         position: relative;
-                        padding-bottom: 56.25%;
-                        width: 100%;
                     }
 
                     .video-player iframe {
+                        left: 0;
+                        height: 100%;
                         position: absolute;
                         padding: 0;
                         top: 0;
-                        left: 0;
                         width: 100%;
-                        height: 100%;
                     }
 
-                    .wedding-videos-list {
-                        height: 100%;
+                    .video-playlist-container {
+                        background-color: #333333;
                         overflow: scroll;
-                        padding-left: 0 10px 0 0;
+                        padding-top: 20px;
+                        padding: 0 4% 0 4%;
+                        
+                        .video-playlist {
+                            position: relative;
+                            width: 1300px;
+                            top: 0;
+                            left: 0;
 
-                        li {
-                            border-bottom: #555555 1px solid;
-                            height: 55px;
-                            list-style-type: none;
+                            .playlist-item {
+                                display: block;
+                                height: 140px;
+                                width: 180px;
+                                float: left;
+                                margin: 0;
+                                padding: 10px;
+
+                                .video-thumbnail {
+                                    background-color: #00FF00;
+                                    height: 84px;
+
+                                    &:hover {
+                                        background-color: #AAAAAA;
+                                        cursor: pointer;                                
+                                    }
+                                }
+
+                                .video-description {
+                                    margin-top: 10px;
+                                    text-align: center;
+
+                                    p {
+                                        color: #EEEEEE;
+                                        display: inline;
+                                        font-size: 12px;
+
+                                        &.video-date {
+                                            font-size: 10px;
+                                        }
+
+                                        &.video-location {
+                                            display: none;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .arrows {
+                        position: relative;
+                        text-align: center;
+                        width: 100%;
+
+                        .scroll-help {
+                            color: #EEEEEE;
+                            display: none;
+                            line-height: 20px;
                             padding: 5px;
-                            -o-transition: .1s;
-                            -ms-transition: .1s;
-                            -moz-transition: .1s;
-                            -webkit-transition: .1s;
-                            transition: .1s;
+                            position: relative;
+                            top: -35px;
 
-                            &:hover {
-                                background-color: #DDDDDD;
-                                cursor: pointer;                                
+                            .scroll-icon-container {
+                                cursor: pointer;
+                                display: inline-block;
+                                height: 30px;
+                                position: relative;
+                                text-align: center;
+                                width: 30px;
+                                
+                                &.left {
+                                    float: left;
+                                }
+
+                                &.right {
+                                    float: right;
+                                }
+                                
+                                i {
+                                    position: relative;
+                                    top: 2px;
+                                }
+                            }
+                        }
+
+                        .arrow {
+                            background-color: #777777;
+                            color: #FFFFFF;
+                            cursor: pointer;
+                            padding: 15px;
+                            position: absolute;
+                            top: -100px;
+                            width: 50px;
+                            z-index: 10;
+
+                            i {
+                                font-size: 2.0em;
                             }
 
-                            p {                               
-                                margin: 0;
+                            &.arrow-left {
+                                left: -25px;
+                            }
 
-                                &:not(.video-location) {
-                                    display: inline;
-                                }
-
-                                &.video-title {
-                                    font-size: 18px;
-                                }
-
-                                &.video-date {                                    
-                                    font-size: 12px;
-                                    font-style: italic;
-                                }
-
-                                &.video-location {
-                                    color: #666666;
-                                }
+                            &.arrow-right {
+                                right: -25px;
                             }
                         }
                     }
@@ -189,17 +255,43 @@ html {
             }
         }
     }
+}
 
-    /* Center the navbar links */
-    nav {
-        .navbar-nav {
-            display: inline-block;
-            float: none;
-            vertical-align: top;
-        }
+/* Center the navbar links */
+nav {
+    .navbar-nav {
+        display: inline-block;
+        float: none;
+        vertical-align: top;
+    }
 
-        .navbar-collapse {
-            text-align: center;
+    .navbar-collapse {
+        text-align: center;
+    }
+}
+
+@media (max-width: 580px) {
+    html > body {
+
+        section.interests-section .wedding-videos {
+
+            /* Give arrow buttons more room */
+            .video-playlist-container .video-playlist {
+                .playlist-item {
+                    height: 155px;
+                }
+            }
+
+            /* Hide arrow buttons and show scroll help */
+            .arrows {
+                .scroll-help {
+                    display: block;
+                }
+
+                .arrow {
+                    display: none;
+                }
+            }
         }
     }
 }

@@ -1,26 +1,11 @@
 $(function() {
     'use strict';
 
-    var currentImage = 0;
-    var imagePaths = [
-        '../images/computer.png',
-        '../images/engagement.jpg'
-    ];
-
     var controls = {
         $doc: $(document),
         $backgroundImage: $('.background-image'),
         googleMap: document.getElementById('googleMap')
-    };
-
-    window.setTimeout(function () {
-        currentImage = (currentImage >= imagePaths.length) ? 0 : currentImage += 1;
-
-        controls.$backgroundImage.fadeOut(400, function() {
-            $(this).attr('src', imagePaths[currentImage]);
-        })
-        .fadeIn(400);
-    }, 5000);            
+    };          
 
     // Smooth scrolling
     var hrefElements = $('a[href*=#]:not([href=#])');

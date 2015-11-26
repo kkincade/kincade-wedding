@@ -9,6 +9,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="css/bootstrap-theme.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="css/index.min.css" rel="stylesheet" type="text/css">
 </head>
 
@@ -30,49 +31,91 @@
     <section id="interestsSection" class="interests-section">
         <h2 class="section-title">Interests</h2>
 
-        <div class="row wedding-videos">
-            <div class="col-xs-12 col-sm-7 video-player-container">
+        <div class="wedding-videos">
+            <div class="video-player-container">
                 <div class="video-player">
                     <iframe src="http://player.vimeo.com/video/87824702?title=0&amp;byline=0&amp;portrait=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                 </div>
             </div>
-            <ul class="col-xs-12 col-sm-5 wedding-videos-list">
-                <li>
-                    <p class="video-title">Katie &amp; Brady</p>
-                    <p class="video-date">- July 2015</p>
-                    <p class="video-location">Meadow Creek Lodge - Pine, CO</p>
-                </li>
-                <li>
-                    <p class="video-title">Toby &amp; Erica</p>
-                    <p class="video-date">- October 2013</p>
-                    <p class="video-location">Jackson's Bar and Grill - Denver, CO</p>
-                </li>
-                <li>
-                    <p class="video-title">Jose &amp; Victoria</p>
-                    <p class="video-date">- October 2013</p>
-                    <p class="video-location">Denver Athletic Club - Denver, CO</p>
-                </li>
-                <li>
-                    <p class="video-title">Nick &amp; Allison</p>
-                    <p class="video-date">- August 2013</p>
-                    <p class="video-location">The Four Seasons - Vail, CO </p>
-                </li>
-                <li>
-                    <p class="video-title">Shane &amp; Bree</p>
-                    <p class="video-date">- July 2013</p>
-                    <p class="video-location">Brighton, CO </p>
-                </li>
-                <li>
-                    <p class="video-title">Juan &amp; Amanda</p>
-                    <p class="video-date">- February 2013</p>
-                    <p class="video-location">Brighton, CO </p>
-                </li>
-                <li>
-                    <p class="video-title">Ben &amp; Courtney</p>
-                    <p class="video-date">- June 2012</p>
-                    <p class="video-location">Brighton, CO </p>
-                </li>
-            </ul>
+            <div class="video-playlist-container">
+                <div class="video-playlist">
+                    <div class="playlist-item">
+                        <div class="video-thumbnail">
+                        </div>
+                        <div class="video-description">
+                            <p class="video-title">Katie &amp; Brady</p>
+                            <p class="video-date">- July 2015</p>
+                            <p class="video-location">Meadow Creek Lodge - Pine, CO</p>
+                        </div>
+                    </div>
+                    <div class="playlist-item">
+                        <div class="video-thumbnail">
+                        </div>
+                        <div class="video-description">
+                            <p class="video-title">Toby &amp; Erica</p>
+                            <p class="video-date">- October 2013</p>
+                            <p class="video-location">Jackson's Bar and Grill - Denver, CO</p>
+                        </div>
+                    </div>
+                    <div class="playlist-item">
+                        <div class="video-thumbnail">
+                        </div>
+                        <div class="video-description">
+                            <p class="video-title">Jose &amp; Victoria</p>
+                            <p class="video-date">- October 2013</p>
+                            <p class="video-location">Denver Athletic Club - Denver, CO</p>
+                        </div>
+                    </div>
+                    <div class="playlist-item">
+                        <div class="video-thumbnail">
+                        </div>
+                        <div class="video-description">
+                            <p class="video-title">Nick &amp; Allison</p>
+                            <p class="video-date">- August 2013</p>
+                            <p class="video-location">The Four Seasons - Vail, CO </p>
+                        </div>
+                    </div>
+                    <div class="playlist-item">
+                        <div class="video-thumbnail">
+                        </div>
+                        <div class="video-description">
+                            <p class="video-title">Shane &amp; Bree</p>
+                            <p class="video-date">- July 2013</p>
+                            <p class="video-location">Brighton, CO </p>
+                        </div>
+                    </div>
+                    <div class="playlist-item">
+                        <div class="video-thumbnail">
+                        </div>
+                        <div class="video-description">
+                            <p class="video-title">Juan &amp; Amanda</p>
+                            <p class="video-date">- February 2013</p>
+                            <p class="video-location">Brighton, CO </p>
+                        </div>
+                    </div>
+                    <div class="playlist-item">
+                        <div class="video-thumbnail">
+                        </div>
+                        <div class="video-description">
+                            <p class="video-title">Ben &amp; Courtney</p>
+                            <p class="video-date">- June 2012</p>
+                            <p class="video-location">Brighton, CO </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="arrows">
+                <div class="arrow arrow-left"><i class="fa fa-angle-left fa-lg"></i></div>
+                <div class="arrow arrow-right"><i class="fa fa-angle-right fa-lg"></i></div>
+                <div class="scroll-help">
+                    <div class="scroll-icon-container left">
+                        <i class="scroll-left fa fa-angle-left fa-lg"></i>
+                    </div>
+                    <div class="scroll-icon-container right">
+                        <i class="scroll-left fa fa-angle-right fa-lg"></i>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -119,7 +162,7 @@
         </div>
     </nav>
 
-    <!-- Load JS scripts last so page content loads faster -->
+    <!-- Load JS scripts last so page content isn't blocked -->
     <script src="js/jquery-1.11.3.min.js" type="text/javascript"></script>
     <script src="js/bootstrap.min.js" type="text/javascript"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDuPzA2bNVu7y2TRJDPmYrUJTixCwS2nCk" type="text/javascript"></script>
