@@ -145,10 +145,6 @@ html {
                                         &.video-date {
                                             font-size: 10px;
                                         }
-
-                                        &.video-location {
-                                            display: none;
-                                        }
                                     }
                                 }
                             }
@@ -183,7 +179,7 @@ html {
                                 &.right {
                                     float: right;
                                 }
-                                
+
                                 i {
                                     position: relative;
                                     top: 2px;
@@ -254,6 +250,15 @@ html {
                 }
             }
         }
+    }
+
+    .unselectable {
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
     }
 }
 

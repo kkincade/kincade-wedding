@@ -1,6 +1,11 @@
 (function ($) {
     'use strict';
 
+    // -------- OBJECT DEFINITION --------
+
+    /**
+     * The constructor for the class.
+     */
     var WebsiteControl = function (element, options) {
         this.options = options;
         this.$element = $(element);
@@ -10,26 +15,50 @@
         this.init();
     };
 
+    /**
+     * Initializes the controls and calls any other init methods
+     * to setup the site.
+     */
     WebsiteControl.prototype.init = function () {
+        this.templates = {
+            videoPlaylistItem: this.$element.find('playlist-item-template')
+        };
+
         this.controls = {
             $backgroundImage: $('.background-image'),
+
+            // Interests Section
+            interests: {
+                $container: this.$element.find('section.interests-section'),
+                $videoPlaylist: this.$element.find('.video-playlist-container'),
+                $bigArrowLeft: this.$element.find('.arrow-left'),
+                $bigArrowRight: this.$element.find('.arrow-right'),
+                $smallArrowLeft: this.$element.find('.scroll-help .left'),
+                $smallArrowRight: this.$element.find('.scroll-help .right')
+            },
+            
+            // Connect Section
             $googleMap: this.$element.find('.google-map')
         };
 
         this.initSmoothScroll();
+        this.initVideoPlayer();
         this.initGoogleMap();
     }
 
+    /**
+     * Initializes the smooth scroll occurring when a href tag is clicked.
+     */
     WebsiteControl.prototype.initSmoothScroll = function () {
         var hrefElements = $('a[href*=#]:not([href=#])');
 
         hrefElements.click(function() {
             if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-                var target = $(this.hash);
-                target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+                var $target = $(this.hash);
+                $target = $target.length ? $target : $('[name=' + this.hash.slice(1) +']');
                 
-                if (target.length) {
-                    target.velocity('scroll', { duration: 1000, easing: 'easeOutExpo' });
+                if ($target.length) {
+                    $target.velocity('scroll', { duration: 1000, easing: 'easeOutExpo' });
 
                     // Don't remember event in browser history
                     event.preventDefault();
@@ -37,8 +66,69 @@
                 }
             }
         });
-    }
+    };
 
+    /**
+     * Initializes the video player. This includes creating the playlist
+     * using the template from the DOM and also setting up the scrolling
+     * capabilities.
+     */
+    WebsiteControl.prototype.initVideoPlayer = function ()  {
+        var _this = this;
+
+        var playlistItems = {
+            bradyAndKatie:   { id: 138580909, title: 'Katie & Brady', date: 'July 2015' },
+            tobyAndErica:    { id: 96914498, title: 'Toby & Erica', date: 'June 2014' },
+            joseAndVictoria: { id: 87824702, title: 'Jose & Victoria', date: 'October 2013' },
+            nickAndAllison:  { id: 82051409, title: 'Nick & Allison', date: 'August 2013'},
+            shaneAndBree:    { id: 74086184, title: 'Shane & Bree', date: 'July 2013' }, 
+            juanAndAmanda:   { id: 66216165, title: 'Juan & Amanda', date: 'February 2013' },
+            benAndCourtney:  { id: 53657379, title: 'Ben & Courtney', date: 'June 2012' }
+        };
+
+        playlistItems.each(function () {
+            var template = this.templates.videoPlaylistItem;
+            // TODO: finish template
+        });
+
+        // Callbacks for right scroll arrows  
+        this.controls.interests.$bigArrowRight.add(this.controls.interests.$smallArrowRight)
+            .bind("click", function (event) {
+                _this.$element.velocity('scroll', { 
+                    container: _this.controls.interests.$videoPlaylist, 
+                    axis: 'x', 
+                    offset: '180px', 
+                    duration: 750, 
+                    easing: 'easeOutExpo' 
+                });
+
+                // Don't remember event in browser history
+                event.preventDefault();
+                return false;
+            });
+
+        // Callbacks for left scroll arrows  
+        this.controls.interests.$bigArrowLeft.add(this.controls.interests.$smallArrowLeft)
+            .bind("click", function (event) {
+                _this.$element.velocity('scroll', { 
+                    container: _this.controls.interests.$videoPlaylist, 
+                    axis: 'x', 
+                    offset: '-180px', 
+                    duration: 750, 
+                    easing: 'easeOutExpo' 
+                });
+
+                // Don't remember event in browser history
+                event.preventDefault();
+                return false;
+            });
+    };
+
+    /**
+     * Initializes the Google map. Uses a theme I found on the web. Sets
+     * a marker on the Coors Field Stadium. Also, hides controls unless
+     * the mouse is hovering over the map. 
+     */
     WebsiteControl.prototype.initGoogleMap = function () {
         var _this = this;
 
@@ -84,7 +174,7 @@
         this.googleMap.setOptions(mapControlsOff)
 
         // Listener to add controls
-        google.maps.event.addDomListener(this.googleMap.getDiv(), 'mouseover', function(e) {
+        google.maps.event.addDomListener(this.googleMap.getDiv(), 'mouseover', function (e) {
             e.cancelBubble = true;
             if (!_this.googleMap.hover) {
                 _this.googleMap.hover = true;
@@ -93,13 +183,15 @@
         });
 
         // Listener to remove controls
-        google.maps.event.addDomListener(this.$body[0], 'mouseover', function(e) {
+        google.maps.event.addDomListener(this.$body[0], 'mouseover', function (e) {
             if (_this.googleMap.hover) {
                 _this.googleMap.setOptions(mapControlsOff);
                 _this.googleMap.hover = false;
             }
         });
     }
+
+
     // -------- PLUGIN DEFINITION --------
 
     $.fn.websiteControl = function (option) {
