@@ -99,28 +99,6 @@
                 .replace('{{Id}}', video.id);
 
             _this.controls.interests.$videoPlaylist.append(template);
-
-            // Get data from vimeo video
-            // $.ajax({
-            //     url: 'http://www.vimeo.com/api/v2/video/' + this.id + '.json?callback=?',
-            //     data: JSON.stringify({}),
-            //     async: false,
-            //     dataType: "json",
-            //     success: function (data) {
-            //         video.thumbnail = data[0].thumbnail_medium;
-            //         video.url = data[0].url;
-
-            //         var template = _this.templates.videoPlaylistItem
-            //             .replace('{{VideoTitle}}', video.title)
-            //             .replace('{{VideoDate}}', ' - ' + video.date)
-            //             .replace('{{Thumbnail}}', '<img src="' + video.thumbnail + '">');
-
-            //         _this.controls.interests.$videoPlaylist.append(template);
-            //     },
-            //     error: function (jqXhr, textStatus, errorThrown) {
-            //         // TODO Kam: handle error
-            //     }
-            // });
         });
 
         this.controls.interests.playlistItems = this.$element.find('.playlist-item');
@@ -136,7 +114,7 @@
             var iFrame = '<iframe src="http://player.vimeo.com/video/' + $(this).data('videoId') + 
                 '?title=0&amp;byline=0&amp;portrait=0" frameborder="0" ' +
                 'webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
-                
+
             _this.controls.interests.$videoPlayer
                 .velocity({ opacity: 0 }, { duration: 300 })
                 .empty()
