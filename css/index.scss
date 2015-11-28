@@ -88,6 +88,10 @@ html {
                     max-width: 900px;
                     padding: 10px 30px;
 
+                    .video-player-container {
+                        background-color: #333333;
+                    }
+
                     /* Make the video responsive */
                     .video-player {
                         padding-bottom: 56.25%; /* 16:9 aspect ratio */
@@ -105,32 +109,37 @@ html {
 
                     .video-playlist-container {
                         background-color: #333333;
-                        overflow: scroll;
+                        height: 140px;
+                        overflow-x: scroll;
+                        overflow-y: hidden;
                         padding-top: 20px;
                         padding: 0 4% 0 4%;
                         
                         .video-playlist {
-                            position: relative;
-                            width: 1300px;
-                            top: 0;
                             left: 0;
+                            position: relative;
+                            top: 0;
+                            white-space: nowrap;
+                            width: auto;
+
+                            .playlist-item-template {
+                                display: none;
+                            }
 
                             .playlist-item {
-                                display: block;
+                                display: inline-block;
                                 height: 140px;
-                                width: 180px;
-                                float: left;
                                 margin: 0;
                                 padding: 10px;
+                                width: 180px;
 
-                                .video-thumbnail {
-                                    background-color: #00FF00;
-                                    height: 84px;
+                                img {
+                                    height: 90px;
+                                    width: 160px;
+                                }
 
-                                    &:hover {
-                                        background-color: #AAAAAA;
-                                        cursor: pointer;                                
-                                    }
+                                .video-thumbnail:hover {
+                                    cursor: pointer;
                                 }
 
                                 .video-description {
@@ -281,10 +290,8 @@ nav {
         section.interests-section .wedding-videos {
 
             /* Give arrow buttons more room */
-            .video-playlist-container .video-playlist {
-                .playlist-item {
-                    height: 155px;
-                }
+            .video-playlist-container {
+                height: 165px;
             }
 
             /* Hide arrow buttons and show scroll help */

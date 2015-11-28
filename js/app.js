@@ -21,7 +21,7 @@
      */
     WebsiteControl.prototype.init = function () {
         this.templates = {
-            videoPlaylistItem: this.$element.find('playlist-item-template')
+            videoPlaylistItem: this.$element.find('.playlist-item-template').html()
         };
 
         this.controls = {
@@ -30,11 +30,14 @@
             // Interests Section
             interests: {
                 $container: this.$element.find('section.interests-section'),
-                $videoPlaylist: this.$element.find('.video-playlist-container'),
+                $videoPlayer: this.$element.find('.video-player'),
+                $videoPlaylistContainer: this.$element.find('.video-playlist-container'),
+                $videoPlaylist: this.$element.find('.video-playlist'),
                 $bigArrowLeft: this.$element.find('.arrow-left'),
                 $bigArrowRight: this.$element.find('.arrow-right'),
                 $smallArrowLeft: this.$element.find('.scroll-help .left'),
-                $smallArrowRight: this.$element.find('.scroll-help .right')
+                $smallArrowRight: this.$element.find('.scroll-help .right'),
+                weddingVideos: {}
             },
             
             // Connect Section
@@ -76,26 +79,76 @@
     WebsiteControl.prototype.initVideoPlayer = function ()  {
         var _this = this;
 
-        var playlistItems = {
-            bradyAndKatie:   { id: 138580909, title: 'Katie & Brady', date: 'July 2015' },
-            tobyAndErica:    { id: 96914498, title: 'Toby & Erica', date: 'June 2014' },
-            joseAndVictoria: { id: 87824702, title: 'Jose & Victoria', date: 'October 2013' },
-            nickAndAllison:  { id: 82051409, title: 'Nick & Allison', date: 'August 2013'},
-            shaneAndBree:    { id: 74086184, title: 'Shane & Bree', date: 'July 2013' }, 
-            juanAndAmanda:   { id: 66216165, title: 'Juan & Amanda', date: 'February 2013' },
-            benAndCourtney:  { id: 53657379, title: 'Ben & Courtney', date: 'June 2012' }
+        this.controls.interests.weddingVideos = {
+            bradyAndKatie:   { id: 138580909, title: 'Katie & Brady', date: 'July 2015', thumbnail: 'images/brady-katie.jpg' },
+            tobyAndErica:    { id: 96914498, title: 'Toby & Erica', date: 'June 2014', thumbnail: 'images/toby-erica.jpg' },
+            joseAndVictoria: { id: 87824702, title: 'Jose & Victoria', date: 'October 2013', thumbnail: 'images/jose-victoria.jpg' },
+            nickAndAllison:  { id: 82051409, title: 'Nick & Allison', date: 'August 2013', thumbnail: 'images/nick-allison.jpg' },
+            shaneAndBree:    { id: 74086184, title: 'Shane & Bree', date: 'July 2013', thumbnail: 'images/shane-bree.jpg' }, 
+            juanAndAmanda:   { id: 66216165, title: 'Juan & Amanda', date: 'February 2013', thumbnail: 'images/juan-amanda.jpg' },
+            benAndCourtney:  { id: 53657379, title: 'Ben & Courtney', date: 'June 2012', thumbnail: 'images/ben-courtney.jpg' }
         };
 
-        playlistItems.each(function () {
-            var template = this.templates.videoPlaylistItem;
-            // TODO: finish template
+        $.each(this.controls.interests.weddingVideos, function () {
+            var video = this;
+
+            var template = _this.templates.videoPlaylistItem
+                .replace('{{VideoTitle}}', video.title)
+                .replace('{{VideoDate}}', ' - ' + video.date)
+                .replace('{{Thumbnail}}', '<img src="' + video.thumbnail + '">')
+                .replace('{{Id}}', video.id);
+
+            _this.controls.interests.$videoPlaylist.append(template);
+
+            // Get data from vimeo video
+            // $.ajax({
+            //     url: 'http://www.vimeo.com/api/v2/video/' + this.id + '.json?callback=?',
+            //     data: JSON.stringify({}),
+            //     async: false,
+            //     dataType: "json",
+            //     success: function (data) {
+            //         video.thumbnail = data[0].thumbnail_medium;
+            //         video.url = data[0].url;
+
+            //         var template = _this.templates.videoPlaylistItem
+            //             .replace('{{VideoTitle}}', video.title)
+            //             .replace('{{VideoDate}}', ' - ' + video.date)
+            //             .replace('{{Thumbnail}}', '<img src="' + video.thumbnail + '">');
+
+            //         _this.controls.interests.$videoPlaylist.append(template);
+            //     },
+            //     error: function (jqXhr, textStatus, errorThrown) {
+            //         // TODO Kam: handle error
+            //     }
+            // });
+        });
+
+        this.controls.interests.playlistItems = this.$element.find('.playlist-item');
+
+        // Clicking on a video in the playlist
+        this.controls.interests.playlistItems.on('click', function () {
+            var videoId = $(this).data('videoId');
+
+            if (_this.controls.interests.$videoPlayer.html().indexOf(videoId.toString()) > -1) {
+                return;
+            }
+
+            var iFrame = '<iframe src="http://player.vimeo.com/video/' + $(this).data('videoId') + 
+                '?title=0&amp;byline=0&amp;portrait=0" frameborder="0" ' +
+                'webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
+                
+            _this.controls.interests.$videoPlayer
+                .velocity({ opacity: 0 }, { duration: 300 })
+                .empty()
+                .append(iFrame)
+                .velocity({ opacity: 1 }, { duration: 300 });
         });
 
         // Callbacks for right scroll arrows  
         this.controls.interests.$bigArrowRight.add(this.controls.interests.$smallArrowRight)
             .bind("click", function (event) {
                 _this.$element.velocity('scroll', { 
-                    container: _this.controls.interests.$videoPlaylist, 
+                    container: _this.controls.interests.$videoPlaylistContainer, 
                     axis: 'x', 
                     offset: '180px', 
                     duration: 750, 
@@ -111,7 +164,7 @@
         this.controls.interests.$bigArrowLeft.add(this.controls.interests.$smallArrowLeft)
             .bind("click", function (event) {
                 _this.$element.velocity('scroll', { 
-                    container: _this.controls.interests.$videoPlaylist, 
+                    container: _this.controls.interests.$videoPlaylistContainer, 
                     axis: 'x', 
                     offset: '-180px', 
                     duration: 750, 

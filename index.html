@@ -40,13 +40,16 @@
                 </div>
                 <div class="video-playlist-container">
                     <div class="video-playlist">
+                        <!-- Video item template -->
                         <div class="template playlist-item-template">
-                            <div class="video-thumbnail">
-                                <i></i>
-                            </div>
-                            <div class="video-description">
-                                <p class="video-title">{{VideoTitle}}</p>
-                                <p class="video-date">{{VideoDate}}</p>
+                            <div class="playlist-item" data-video-id={{Id}}>
+                                <div class="video-thumbnail">
+                                    {{Thumbnail}}
+                                </div>
+                                <div class="video-description">
+                                    <p class="video-title">{{VideoTitle}}</p>
+                                    <p class="video-date">{{VideoDate}}</p>
+                                </div>
                             </div>
                         </div>
                     </div>
