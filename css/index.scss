@@ -3,15 +3,17 @@
  * sass --watch index.scss:index.min.css --style compressed
  */
 
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic);
+
 html {
     font-family: 'Open Sans';
     font-weight: 300;
 
     hr {
-        background: black;
-        background: -webkit-gradient(linear, 0 0, 100% 0, from(white), to(white), color-stop(50%, black));
-        height: 1px;
-        margin: 0; 
+        margin: 0;
+        padding: 10px;
+        background-color: #FFF;
+        border-top: 1px solid #AAA;
     }
 
     body {
@@ -81,7 +83,112 @@ html {
                 height: 800px;
             }
 
-            &.interests-section  {
+            &.musician-section {
+                background: url(../images/band-02.jpg) no-repeat center center fixed; 
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+
+                .band-section {
+                    background-color: #000000;
+                    color: #EEEEEE;
+                    height: 700px;
+                    opacity: 0.8;
+                    padding-top: 400px;
+                    position: relative;
+
+                    .band-name {
+                        text-align: center;
+
+                        h3 {
+                            font-family: 'Open Sans';
+                            font-weight: 300;
+                        }
+                    }
+
+                    img {
+                        color: #EEEEEE;
+                        height: 64px;
+                        width: 64px;
+                    }
+
+                    .band-members {
+                        font-family: 'Open Sans';
+                        font-weight: 300;
+                        margin: 0;
+                        opacity: 0.8;
+                        position: absolute;
+                        width: 100%;
+
+                        .band-name {
+                            text-align: center;
+
+                            h3 {
+                                font-family: 'Open Sans';
+                                font-weight: 300;
+                                font-size: 20px;
+                                margin: 0;
+                            }
+                        }
+
+                        .member {
+                            padding: 25px;
+
+                            h4 {
+                                font-family: 'Open Sans';
+                                font-weight: 300;
+                                font-size: 16px;
+                            }
+
+                            h5 {
+                                font-family: 'Open Sans';
+                                font-weight: 400;
+                                font-size: 12px;
+                                font-style: italic;
+                            }
+                        }
+                    }
+                }
+
+                .music-player {
+                    background-color: rgba(0, 0, 0, 0.8);
+                    color: #EEEEEE;
+
+                    .band-bio {
+                        float: left;
+                    }
+                }
+
+                .cdbaby-player-container {
+                    max-height: 785px;
+                    max-width: 400px;
+                    min-width: 300px;
+
+                    .cdbaby-player {
+                        height: 0;
+                        overflow: hidden;
+                        padding-bottom: 100%;
+                        padding-top: 200px;
+                        position: relative;
+
+                        iframe {
+                            border: 0;
+                            height: 100%;
+                            left: 0;
+                            position: absolute;
+                            top: 0;
+                            width: 100%;
+
+                            div.logo {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &.videography-section {
 
                 .wedding-videos {
                     margin: 10px auto 0 auto;
@@ -159,64 +266,64 @@ html {
                             }
                         }
                     }
+                }
 
-                    .arrows {
+                .arrows {
+                    position: relative;
+                    text-align: center;
+                    width: 100%;
+
+                    .scroll-help {
+                        color: #EEEEEE;
+                        display: none;
+                        line-height: 20px;
+                        padding: 5px;
                         position: relative;
-                        text-align: center;
-                        width: 100%;
+                        top: -35px;
 
-                        .scroll-help {
-                            color: #EEEEEE;
-                            display: none;
-                            line-height: 20px;
-                            padding: 5px;
-                            position: relative;
-                            top: -35px;
-
-                            .scroll-icon-container {
-                                cursor: pointer;
-                                display: inline-block;
-                                height: 30px;
-                                position: relative;
-                                text-align: center;
-                                width: 30px;
-                                
-                                &.left {
-                                    float: left;
-                                }
-
-                                &.right {
-                                    float: right;
-                                }
-
-                                i {
-                                    position: relative;
-                                    top: 2px;
-                                }
-                            }
-                        }
-
-                        .arrow {
-                            background-color: #777777;
-                            color: #FFFFFF;
+                        .scroll-icon-container {
                             cursor: pointer;
-                            padding: 15px;
-                            position: absolute;
-                            top: -100px;
-                            width: 50px;
-                            z-index: 10;
+                            display: inline-block;
+                            height: 30px;
+                            position: relative;
+                            text-align: center;
+                            width: 30px;
+                            
+                            &.left {
+                                float: left;
+                            }
+
+                            &.right {
+                                float: right;
+                            }
 
                             i {
-                                font-size: 2.0em;
+                                position: relative;
+                                top: 2px;
                             }
+                        }
+                    }
 
-                            &.arrow-left {
-                                left: -25px;
-                            }
+                    .arrow {
+                        background-color: #777777;
+                        color: #FFFFFF;
+                        cursor: pointer;
+                        padding: 15px;
+                        position: absolute;
+                        top: -100px;
+                        width: 50px;
+                        z-index: 10;
 
-                            &.arrow-right {
-                                right: -25px;
-                            }
+                        i {
+                            font-size: 2.0em;
+                        }
+
+                        &.arrow-left {
+                            left: -25px;
+                        }
+
+                        &.arrow-right {
+                            right: -25px;
                         }
                     }
                 }
@@ -287,7 +394,28 @@ nav {
 @media (max-width: 580px) {
     html > body {
 
-        section.interests-section .wedding-videos {
+        // section.musician-section {
+        //     .band-section .band-members {
+
+        //         .band-name {
+        //             font-size: 12px;
+        //         }
+
+        //         .member {
+        //             padding: 5px;
+
+        //             h4 {
+        //                 font-size: 11px;
+        //             }
+
+        //             h5 {
+        //                 font-size: 9px;
+        //             }
+        //         }
+        //     }
+        // }
+
+        section.videography-section .wedding-videos {
 
             /* Give arrow buttons more room */
             .video-playlist-container {
