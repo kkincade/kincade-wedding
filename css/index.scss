@@ -5,16 +5,19 @@
 
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic);
 
+/* Social Media Brand Colors */
+$twitter: #00ACED;
+$facebook: #3B5998;
+$youtube: #BB0000;
+$instagram: #DED1C1;
+$soundcloud: #FF3A00;
+$reverbNation: #222222;
+$itunes: #F7322C;
+$spotify: #81B71A;
+
 html {
     font-family: 'Open Sans';
     font-weight: 300;
-
-    hr {
-        margin: 0;
-        padding: 10px;
-        background-color: #FFF;
-        border-top: 1px solid #AAA;
-    }
 
     body {
         /* Full-screen landing image */
@@ -89,14 +92,35 @@ html {
                 -moz-background-size: cover;
                 -o-background-size: cover;
                 background-size: cover;
+                color: #EEEEEE;
 
-                .band-section {
-                    background-color: #000000;
+                .black-transparent {
+                    background-color: rgba(0, 0, 0, 0.8);
+                }
+
+                .band-name {
+                    padding-top: 30vw;
+                    text-align: center;
+
+                    h3 {
+                        font-family: 'Open Sans';
+                        font-weight: 300;
+                        margin: 0;
+                    }
+                }
+
+                img {
                     color: #EEEEEE;
-                    height: 700px;
-                    opacity: 0.8;
-                    padding-top: 400px;
-                    position: relative;
+                    height: 64px;
+                    width: 64px;
+                }
+
+                .band-members {
+                    font-family: 'Open Sans';
+                    font-weight: 300;
+                    margin: 0;
+                    padding-bottom: 60px;
+                    width: 100%;
 
                     .band-name {
                         text-align: center;
@@ -104,84 +128,99 @@ html {
                         h3 {
                             font-family: 'Open Sans';
                             font-weight: 300;
+                            font-size: 20px;
+                            margin: 0;
                         }
                     }
 
-                    img {
-                        color: #EEEEEE;
-                        height: 64px;
-                        width: 64px;
-                    }
+                    .member {
+                        padding: 25px;
+                        text-align: center;
 
-                    .band-members {
-                        font-family: 'Open Sans';
-                        font-weight: 300;
-                        margin: 0;
-                        opacity: 0.8;
-                        position: absolute;
-                        width: 100%;
-
-                        .band-name {
-                            text-align: center;
-
-                            h3 {
-                                font-family: 'Open Sans';
-                                font-weight: 300;
-                                font-size: 20px;
-                                margin: 0;
-                            }
+                        h4 {
+                            font-family: 'Open Sans';
+                            font-weight: 300;
+                            font-size: 16px;
                         }
 
-                        .member {
-                            padding: 25px;
-
-                            h4 {
-                                font-family: 'Open Sans';
-                                font-weight: 300;
-                                font-size: 16px;
-                            }
-
-                            h5 {
-                                font-family: 'Open Sans';
-                                font-weight: 400;
-                                font-size: 12px;
-                                font-style: italic;
-                            }
+                        h5 {
+                            font-family: 'Open Sans';
+                            font-weight: 400;
+                            font-size: 12px;
+                            font-style: italic;
                         }
                     }
                 }
+                
+                .about-the-band {
+                    padding-bottom: 50px;
 
-                .music-player {
-                    background-color: rgba(0, 0, 0, 0.8);
-                    color: #EEEEEE;
+                    .band-links-container {
+                        
+                        .band-links {
+                            margin: 0 auto;
+                            max-width: 630px;
 
-                    .band-bio {
-                        float: left;
+                            .band-link {
+                                float: left;
+                                height: 190px;
+                                position: relative;
+                                text-align: center;
+                                width: 190px;
+
+                                img {
+                                    bottom: 0;
+                                    height: 150px;
+                                    left: 0;
+                                    margin: auto;
+                                    position: absolute;
+                                    right: 0;
+                                    top: 0;
+                                    width: 150px;
+                                }
+
+                                &.facebook { background-color: $facebook; }
+                                &.youtube { background-color: $youtube; }
+                                &.twitter { background-color: $twitter; }
+                                &.soundcloud { background-color: $soundcloud; }
+                                &.instagram { background-color: $instagram; }
+                                &.reverb-nation { background-color: $reverbNation; }
+                                &.itunes { background-color: $itunes; }
+                                &.spotify { background-color: $spotify; }
+                                &.website { background-color: #FFFFFF; }
+
+                                &:hover {
+                                    cursor: pointer;
+                                    opacity: 0.9;
+                                }
+                            }
+                        }
                     }
-                }
 
-                .cdbaby-player-container {
-                    max-height: 785px;
-                    max-width: 400px;
-                    min-width: 300px;
+                    .cdbaby-player-container {
+                        max-height: 785px;
+                        max-width: 400px;
+                        min-width: 300px;
+                        margin: auto;
 
-                    .cdbaby-player {
-                        height: 0;
-                        overflow: hidden;
-                        padding-bottom: 100%;
-                        padding-top: 200px;
-                        position: relative;
+                        .cdbaby-player {
+                            height: 0;
+                            overflow: hidden;
+                            padding-bottom: 100%;
+                            padding-top: 200px;
+                            position: relative;
 
-                        iframe {
-                            border: 0;
-                            height: 100%;
-                            left: 0;
-                            position: absolute;
-                            top: 0;
-                            width: 100%;
+                            iframe {
+                                border: 0;
+                                height: 100%;
+                                left: 0;
+                                position: absolute;
+                                top: 0;
+                                width: 100%;
 
-                            div.logo {
-                                display: none;
+                                div.logo {
+                                    display: none;
+                                }
                             }
                         }
                     }
@@ -394,26 +433,37 @@ nav {
 @media (max-width: 580px) {
     html > body {
 
-        // section.musician-section {
-        //     .band-section .band-members {
+        section.musician-section {
+            .about-the-band {
+                margin: 0;
 
-        //         .band-name {
-        //             font-size: 12px;
-        //         }
+                .music-player {
+                    padding: 0;
+                }
 
-        //         .member {
-        //             padding: 5px;
+                .cdbaby-player-container {
+                    margin: 0 auto;
+                }
+                
+                .band-links-container {
+                    margin: 0 auto;
 
-        //             h4 {
-        //                 font-size: 11px;
-        //             }
+                    .band-links {
+                        max-width: 400px;
 
-        //             h5 {
-        //                 font-size: 9px;
-        //             }
-        //         }
-        //     }
-        // }
+                        .band-link {
+                            width: 133px;
+                            height: 133px;
+
+                            img {
+                                height: 100px;
+                                width: 100px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
 
         section.videography-section .wedding-videos {
 
