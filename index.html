@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Kameron Kincade</title>
+    <title>Kincade Wedding</title>
     <link href="images/logo.png" rel="shortcut icon" type="image/png">
 
     <!-- Load CSS -->
@@ -19,144 +19,58 @@
 
         <section id="welcomeSection" class="welcome-section">
             <div class="page-description-container">
-                <h1 class="page-title">KAMERON KINCADE</h1>
-                <p class="page-subtitle">SOFTWARE. MUSIC. MEDIA.</p>
+                <h1 class="page-title">MACKENZIE &amp; KAMERON</h1>
+                <p class="page-subtitle">08.18.16</p>
             </div>
         </section>
 
-        <section id="experienceSection" class="experience-section">
-            <h2 class="section-title">Experience</h2>
+        <section id="ourStorySection" class="our-story-section">
+            <h2 class="section-title">Our Story</h2>
         </section>
 
-        <section id="musicianSection" class="musician-section">
-            <div class="band-name black-transparent">
-                <img src="images/u2t-logo.png">
-                <h3>Under Two Tables</h3>
-            </div>
-
-            <div id="bandMembers" class="row band-members black-transparent">
-                <div class="col-xs-6 col-sm-2 member">
-                    <h4>Cody Sickler</h4>
-                    <h5>Lead Guitar</h5>
-                </div>
-                <div class="col-xs-6 col-sm-2 member">
-                    <h4>Kameron Kincade</h4>
-                    <h5>Guitar/Vocals</h5>
-                </div>
-                <div class="col-xs-6 col-sm-2 member">
-                    <h4>Ryan Langewisch</h4>
-                    <h5>Bass/Vocals</h5>
-                </div>
-                <div class="col-xs-6 col-sm-2 member">
-                    <h4>Matthew Glazier</h4>
-                    <h5>Sax/Vocals</h5>
-                </div>
-                <div class="col-xs-6 col-sm-2 member">
-                    <h4>Jonathan Watson</h4>
-                    <h5>Keys</h5>
-                </div>
-                <div class="col-xs-6 col-sm-2 member">
-                    <h4>Caleb Jacob</h4>
-                    <h5>Percussion</h5>
-                </div>
-            </div>
-            
-            <div class="row about-the-band black-transparent">
-                <div class="col-xs-12 col-md-5 music-player">
-                    <div class="cdbaby-player-container">
-                        <div class="cdbaby-player">
-                            <iframe name="album" src="http://widget.cdbaby.com/f854cd80-18aa-4d50-8196-9c504e361dd6/album/light/opaque"></iframe>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-xs-12 col-md-7 band-links-container">
-                    <div class="band-links">
-                        <div class="band-link website">
-                            <a href="http://www.undertwotables.com"><img src="images/u2t-logo-thin.png"></a>
-                        </div>
-                        <div class="band-link itunes">
-                            <a href="https://itunes.apple.com/us/artist/under-two-tables/id882089663"><img src="images/band-links/itunes.png"></a>
-                        </div>
-                        <div class="band-link spotify">
-                            <a href="https://play.spotify.com/album/19RV4pgM1V1vObON5kuoPX"><img src="images/band-links/spotify.png"></a>
-                        </div>
-                        <div class="band-link facebook">
-                            <a href="https://www.facebook.com/UnderTwoTables/"><img src="images/band-links/facebook.png"></a>
-                        </div>
-                        <div class="band-link instagram">
-                            <a href="https://www.instagram.com/undertwotables/"><img src="images/band-links/instagram.png"></a>
-                        </div>
-                        <div class="band-link twitter">
-                            <a href="https://twitter.com/undertwotables"><img src="images/band-links/twitter.png"></a>
-                        </div>
-                        <div class="band-link youtube">
-                            <a href="https://www.youtube.com/user/UnderTwoTables"><img src="images/band-links/youtube.png"></a>
-                        </div>
-                        <div class="band-link soundcloud">
-                            <a href="https://soundcloud.com/undertwotables"><img src="images/band-links/soundcloud.png"></a>
-                        </div>
-                        <div class="band-link reverb-nation">
-                            <a href="https://www.reverbnation.com/undertwotables"><img src="images/band-links/reverb-nation.png"></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <section id="bridalPartySection" class="bridal-party-section">
+            <h2 class="section-title">Bridal Party</h2>
         </section>
 
-        <section id="videographySection" class="videography-section">
-            <h2 class="section-title">Videography</h2>
-
-            <div class="wedding-videos">
-                <div class="video-player-container">
-                    <div class="video-player">
-                        <iframe src="http://player.vimeo.com/video/87824702?title=0&amp;byline=0&amp;portrait=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-                    </div>
+        <section id="countdownSection" class="countdown-section">
+            <h2 class="section-title">Countdown</h2>
+            <div class="countdown-container">
+                <div>
+                    <span class="days"></span>
+                    <div class="smalltext">Days</div>
                 </div>
-                <div class="video-playlist-container">
-                    <div class="video-playlist">
-                        <!-- Video item template -->
-                        <div class="template playlist-item-template">
-                            <div class="playlist-item" data-video-id={{Id}}>
-                                <div class="video-thumbnail">
-                                    {{Thumbnail}}
-                                </div>
-                                <div class="video-description">
-                                    <p class="video-title">{{VideoTitle}}</p>
-                                    <p class="video-date">{{VideoDate}}</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div>
+                    <span class="hours"></span>
+                    <div class="smalltext">Hours</div>
                 </div>
-                <div class="arrows">
-                    <div class="arrow arrow-left unselectable"><i class="fa fa-angle-left fa-lg"></i></div>
-                    <div class="arrow arrow-right unselectable"><i class="fa fa-angle-right fa-lg"></i></div>
-                    <div class="scroll-help">
-                        <div class="scroll-icon-container left unselectable">
-                            <i class="scroll-left fa fa-angle-left fa-lg"></i>
-                        </div>
-                        <div class="scroll-icon-container right unselectable">
-                            <i class="scroll-left fa fa-angle-right fa-lg"></i>
-                        </div>
-                    </div>
+                <div>
+                    <span class="minutes"></span>
+                    <div class="smalltext">Minutes</div>
+                </div>
+                <div>
+                    <span class="seconds"></span>
+                    <div class="smalltext">Seconds</div>
                 </div>
             </div>
+            <p class="deadline">Thursday - August 18, 2016 - 6pm</p>
         </section>
 
-        <section id="connectSection" class="connect-section">
-            <h2 class="section-title">CONNECT WITH ME</h2>
+        <section id="registrySection" class="registry-section">
+            <h2 class="section-title">Registry</h2>
+        </section>
+
+        <section id="rsvpSection" class="rsvp-section">
+            <h2 class="section-title">RSVP</h2>
+        </section>
+
+        <section id="locationSection" class="location-section">
+            <h2 class="section-title">THE BARN AT RACCOON CREEK</h2>
 
             <div class="google-map"></div>
 
-            <div class="contact-icons">
-                <a href="mailto:kameron.kincade@icloud.com"><img src="images/envelope.svg" title="Email" /></a>
-                <a href="https://facebook.com/KameronKincade"><img src="images/facebook.svg" title="Facebook" /></a>
-                <a href="https://linkedin.com/in/kameronkincade"><img src="images/linkedin.svg" title="LinkedIn" /></a>
-                <a href="https://twitter.com/kamkincade"><img src="images/twitter.svg" title="Twitter" /></a>
-                <a href="https://youtube.com/user/UnderTwoTables"><img src="images/youtube.svg" title="YouTube" /></a>
-                <a href="https://vimeo.com/kkincade"><img src="images/vimeo.svg" title="Vimeo" /></a>
-                <a href="https://instagram.com/kamkincade"><img src="images/instagram.svg" title="Instagram" /></a>
+            <div class="address">
+                <p>7301 W Bowles Ave</p>
+                <p>Littleton, CO 80123</p>
             </div>
         </section>
 
@@ -177,10 +91,12 @@
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <ul class="nav navbar-nav">
                         <li><a href="#welcomeSection">Welcome</a></li>
-                        <li><a href="#experienceSection">Experience</a></li>
-                        <li><a href="#musicianSection">Music</a></li>
-                        <li><a href="#videographySection">Video</a></li>
-                        <li><a href="#connectSection">Connect</a></li>
+                        <li><a href="#ourStorySection">Our Story</a></li>
+                        <li><a href="#bridalPartySection">Bridal Party</a></li>
+                        <li><a href="#countdownSection">Countdown</a></li>
+                        <li><a href="#registrySection">Registry</a></li>
+                        <li><a href="#rsvpSection">RSVP</a></li>
+                        <li><a href="#locationSection">Location</a></li>
                     </ul>
                 </div>
             </div>

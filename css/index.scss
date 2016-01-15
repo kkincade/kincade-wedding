@@ -5,16 +5,6 @@
 
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic);
 
-/* Social Media Brand Colors */
-$twitter: #00ACED;
-$facebook: #3B5998;
-$youtube: #BB0000;
-$instagram: #DED1C1;
-$soundcloud: #FF3A00;
-$reverbNation: #222222;
-$itunes: #F7322C;
-$spotify: #81B71A;
-
 html {
     font-family: 'Open Sans';
     font-weight: 300;
@@ -34,7 +24,7 @@ html {
             right: 0;
             z-index: -2;
         }
-        
+
         h1.page-title {
             color: #FFFFFF;
             font-family: 'Open Sans';
@@ -53,8 +43,10 @@ html {
         h2.section-title {
             font-family: 'Open Sans';
             font-size: 6vw;
-            font-weight: 300;
+            font-weight: 300;            
             margin: 0;
+            padding: 20px 10px 0 10px;
+            text-align: center;
         }
 
         section {
@@ -63,36 +55,80 @@ html {
             }
 
             &.welcome-section {
-                height: 800px;
+                height: 100vh;
 
                 .page-description-container {
                     padding-right: 10px;
                     position: fixed;
+                    right: 0;
                     z-index: -1;
 
                     .page-title {
-                        font-size: 8vw;
+                        font-size: 5vw;
                         float: right;
                     }
 
                     .page-subtitle {
                         font-size: 3vw;
                         float: right;
+                        text-align: right;
+                        width: 100%;
                     }
                 }
             }
 
-            &.experience-section {
+            &.countdown-section {
+                padding: 30px 0 50px;
+                text-align: center;
+
+                .countdown-container {
+                    color: #FFFFFF;
+                    font-family: 'Open Sans';
+                    font-size: 30px;
+                    margin-top: 30px;
+                    text-align: center;
+
+                    & > div {
+                        background: #BBBBBB;
+                        display: inline-block;
+                        padding: 10px;
+                        width: 110px;
+
+                        & > span {
+                            background: #BBBBBB;
+                            display: inline-block;
+                            padding: 15px;
+                        }
+                    }
+
+                    .smalltext {
+                        padding-top: 5px;
+                        font-size: 16px;
+                    }
+                }
+
+                .deadline {
+                    font-style: italic;
+                    padding-top: 10px;
+                }
+            }
+
+            &.our-story-section {
                 height: 800px;
             }
 
-            &.musician-section {
-                background: url(../images/band-02.jpg) no-repeat center center fixed; 
+            &.bridal-party-section {
+                height: 800px;
+            }
+
+            &.registry-section {
+                background: url(../images/band-02.jpg) no-repeat center center fixed;
                 -webkit-background-size: cover;
                 -moz-background-size: cover;
                 -o-background-size: cover;
                 background-size: cover;
                 color: #EEEEEE;
+                height: 800px;                
 
                 .black-transparent {
                     background-color: rgba(0, 0, 0, 0.8);
@@ -114,261 +150,13 @@ html {
                     height: 64px;
                     width: 64px;
                 }
-
-                .band-members {
-                    font-family: 'Open Sans';
-                    font-weight: 300;
-                    margin: 0;
-                    padding-bottom: 60px;
-                    width: 100%;
-
-                    .band-name {
-                        text-align: center;
-
-                        h3 {
-                            font-family: 'Open Sans';
-                            font-weight: 300;
-                            font-size: 20px;
-                            margin: 0;
-                        }
-                    }
-
-                    .member {
-                        padding: 25px;
-                        text-align: center;
-
-                        h4 {
-                            font-family: 'Open Sans';
-                            font-weight: 300;
-                            font-size: 16px;
-                        }
-
-                        h5 {
-                            font-family: 'Open Sans';
-                            font-weight: 400;
-                            font-size: 12px;
-                            font-style: italic;
-                        }
-                    }
-                }
-                
-                .about-the-band {
-                    padding-bottom: 50px;
-
-                    .band-links-container {
-                        
-                        .band-links {
-                            margin: 0 auto;
-                            max-width: 630px;
-
-                            .band-link {
-                                float: left;
-                                height: 190px;
-                                position: relative;
-                                text-align: center;
-                                width: 190px;
-
-                                img {
-                                    bottom: 0;
-                                    height: 150px;
-                                    left: 0;
-                                    margin: auto;
-                                    position: absolute;
-                                    right: 0;
-                                    top: 0;
-                                    width: 150px;
-                                }
-
-                                &.facebook { background-color: $facebook; }
-                                &.youtube { background-color: $youtube; }
-                                &.twitter { background-color: $twitter; }
-                                &.soundcloud { background-color: $soundcloud; }
-                                &.instagram { background-color: $instagram; }
-                                &.reverb-nation { background-color: $reverbNation; }
-                                &.itunes { background-color: $itunes; }
-                                &.spotify { background-color: $spotify; }
-                                &.website { background-color: #FFFFFF; }
-
-                                &:hover {
-                                    cursor: pointer;
-                                    opacity: 0.9;
-                                }
-                            }
-                        }
-                    }
-
-                    .cdbaby-player-container {
-                        max-height: 785px;
-                        max-width: 400px;
-                        min-width: 300px;
-                        margin: auto;
-
-                        .cdbaby-player {
-                            height: 0;
-                            overflow: hidden;
-                            padding-bottom: 100%;
-                            padding-top: 200px;
-                            position: relative;
-
-                            iframe {
-                                border: 0;
-                                height: 100%;
-                                left: 0;
-                                position: absolute;
-                                top: 0;
-                                width: 100%;
-
-                                div.logo {
-                                    display: none;
-                                }
-                            }
-                        }
-                    }
-                }
             }
 
-            &.videography-section {
-
-                .wedding-videos {
-                    margin: 10px auto 0 auto;
-                    max-width: 900px;
-                    padding: 10px 30px;
-
-                    .video-player-container {
-                        background-color: #333333;
-                    }
-
-                    /* Make the video responsive */
-                    .video-player {
-                        padding-bottom: 56.25%; /* 16:9 aspect ratio */
-                        position: relative;
-                    }
-
-                    .video-player iframe {
-                        left: 0;
-                        height: 100%;
-                        position: absolute;
-                        padding: 0;
-                        top: 0;
-                        width: 100%;
-                    }
-
-                    .video-playlist-container {
-                        background-color: #333333;
-                        height: 140px;
-                        overflow-x: scroll;
-                        overflow-y: hidden;
-                        padding-top: 20px;
-                        padding: 0 4% 0 4%;
-                        
-                        .video-playlist {
-                            left: 0;
-                            position: relative;
-                            top: 0;
-                            white-space: nowrap;
-                            width: auto;
-
-                            .playlist-item-template {
-                                display: none;
-                            }
-
-                            .playlist-item {
-                                display: inline-block;
-                                height: 140px;
-                                margin: 0;
-                                padding: 10px;
-                                width: 180px;
-
-                                img {
-                                    height: 90px;
-                                    width: 160px;
-                                }
-
-                                .video-thumbnail:hover {
-                                    cursor: pointer;
-                                }
-
-                                .video-description {
-                                    margin-top: 10px;
-                                    text-align: center;
-
-                                    p {
-                                        color: #EEEEEE;
-                                        display: inline;
-                                        font-size: 12px;
-
-                                        &.video-date {
-                                            font-size: 10px;
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-
-                .arrows {
-                    position: relative;
-                    text-align: center;
-                    width: 100%;
-
-                    .scroll-help {
-                        color: #EEEEEE;
-                        display: none;
-                        line-height: 20px;
-                        padding: 5px;
-                        position: relative;
-                        top: -35px;
-
-                        .scroll-icon-container {
-                            cursor: pointer;
-                            display: inline-block;
-                            height: 30px;
-                            position: relative;
-                            text-align: center;
-                            width: 30px;
-                            
-                            &.left {
-                                float: left;
-                            }
-
-                            &.right {
-                                float: right;
-                            }
-
-                            i {
-                                position: relative;
-                                top: 2px;
-                            }
-                        }
-                    }
-
-                    .arrow {
-                        background-color: #777777;
-                        color: #FFFFFF;
-                        cursor: pointer;
-                        padding: 15px;
-                        position: absolute;
-                        top: -100px;
-                        width: 50px;
-                        z-index: 10;
-
-                        i {
-                            font-size: 2.0em;
-                        }
-
-                        &.arrow-left {
-                            left: -25px;
-                        }
-
-                        &.arrow-right {
-                            right: -25px;
-                        }
-                    }
-                }
+            &.rsvp-section {
+                height: 800px;
             }
 
-            &.connect-section {
+            &.location-section {
                 // Offset by navbar height
                 margin-bottom: 50px;
                 text-align: center;
@@ -383,24 +171,12 @@ html {
                     height: 380px;
                     width: 100%;
                 }
-                .contact-icons {
-                    padding: 20px;
 
-                    img {
-                        height: 48px;
-                        opacity: 0.5;
-                        padding: 2px;
-                        width: 48px;
-                        -o-transition:.2s;
-                        -ms-transition:.2s;
-                        -moz-transition:.2s;
-                        -webkit-transition:.2s;
-                        transition:.2s;
-                    }
+                .address {
+                    padding: 20px 0;
 
-                    img:hover {
-                        cursor: pointer;
-                        opacity: 0.3;
+                    p {
+                        margin: 0;
                     }
                 }
             }
