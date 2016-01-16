@@ -4,7 +4,7 @@
  */
 
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic);
-
+@import url(https://fonts.googleapis.com/css?family=Martel:400,200);
 html {
     font-family: 'Open Sans';
     font-weight: 300;
@@ -12,17 +12,23 @@ html {
     body {
         /* Full-screen landing image */
         .background-image {
-            background: url(../images/engagement.jpg) no-repeat center center fixed;
+            background: url(../images/engagement-2.jpg) no-repeat center center fixed;
             -webkit-background-size: cover;
             -moz-background-size: cover;
             -o-background-size: cover;
             background-size: cover;
             display: block;
+            -webkit-filter: blur(2px);
+            filter: blur(2px);
             height: 800px;
             left: 0;
             position: fixed;
             right: 0;
             z-index: -2;
+        }
+
+        .row {
+            margin: 0;
         }
 
         h1.page-title {
@@ -49,6 +55,26 @@ html {
             text-align: center;
         }
 
+        h3.subtitle {
+            color: #666666;
+            font-family: 'Open Sans';
+            font-size: 28px;
+            font-weight: 300;            
+            margin: 0 5vw 20px;
+            padding: 50px 0 5px;
+
+            &.underline {
+                border-bottom: 1px solid;
+            }
+        }
+
+        p.section-description {
+            font-size: 16px;
+            font-weight: 200;
+            line-height: 1.5em;
+            margin: 0 5vw;
+        }
+
         section {
             &:not(.welcome-section) {
                 background-color: #FFFFFF;
@@ -57,24 +83,24 @@ html {
             &.welcome-section {
                 height: 100vh;
                 position: relative;
-                text-align: right;
+                text-align: center;
 
                 .page-description-container {
+                    margin-top: 40vh;
                     padding-right: 10px;
                     position: fixed;
                     right: 0;
+                    width: 100%;
                     z-index: -1;
 
                     .page-title {
-                        font-size: 5vw;
+                        font-size: 7vw;
                         float: right;
                     }
 
                     .page-subtitle {
+                        color: #CCCCCC;
                         font-size: 3vw;
-                        float: right;
-                        text-align: right;
-                        width: 100%;
                     }
                 }
 
@@ -116,10 +142,24 @@ html {
 
             &.our-story-section {
                 height: 800px;
+
+                .stories {
+                    margin-top: 50px;
+
+                    .section-description {
+                        font-family: 'Martel';
+                    }
+                }
             }
 
             &.bridal-party-section {
                 height: 800px;
+
+                .party-members {
+                    img {
+                        height: 200px;
+                    }
+                }
             }
 
             &.countdown-section {
@@ -128,33 +168,35 @@ html {
             }
 
             &.registry-section {
-                background: url(../images/band-02.jpg) no-repeat center center fixed;
+                background: url(../images/engagement-3.jpg) no-repeat center center fixed;
                 -webkit-background-size: cover;
                 -moz-background-size: cover;
                 -o-background-size: cover;
                 background-size: cover;
-                color: #EEEEEE;
-                height: 800px;                
+                color: #EEEEEE;               
 
                 .black-transparent {
                     background-color: rgba(0, 0, 0, 0.8);
                 }
 
-                .band-name {
-                    padding-top: 30vw;
+                .registries {
+                    margin-top: 100px;
+                    padding-bottom: 100px;
                     text-align: center;
 
-                    h3 {
-                        font-family: 'Open Sans';
-                        font-weight: 300;
-                        margin: 0;
-                    }
-                }
+                    .registry {
+                        background-color: #FFFFFF;
+                        cursor: pointer;
+                        height: 70px;
+                        margin-right: 10px;
+                        padding: 10px;
 
-                img {
-                    color: #EEEEEE;
-                    height: 64px;
-                    width: 64px;
+                        img {
+                            display: block;
+                            height: 50px;
+                            margin: auto;
+                        }
+                    }
                 }
             }
 
