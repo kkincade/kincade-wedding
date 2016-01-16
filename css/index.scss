@@ -56,6 +56,8 @@ html {
 
             &.welcome-section {
                 height: 100vh;
+                position: relative;
+                text-align: right;
 
                 .page-description-container {
                     padding-right: 10px;
@@ -75,24 +77,23 @@ html {
                         width: 100%;
                     }
                 }
-            }
-
-            &.countdown-section {
-                padding: 30px 0 50px;
-                text-align: center;
 
                 .countdown-container {
+                    bottom: 60px;
                     color: #FFFFFF;
                     font-family: 'Open Sans';
-                    font-size: 30px;
+                    font-size: 20px;
                     margin-top: 30px;
-                    text-align: center;
+                    position: fixed;
+                    text-align: right;
+                    z-index: -1;
 
                     & > div {
                         background: #BBBBBB;
                         display: inline-block;
                         padding: 10px;
-                        width: 110px;
+                        text-align: center;
+                        width: 80px;
 
                         & > span {
                             background: #BBBBBB;
@@ -103,7 +104,7 @@ html {
 
                     .smalltext {
                         padding-top: 5px;
-                        font-size: 16px;
+                        font-size: 12px;
                     }
                 }
 
@@ -119,6 +120,11 @@ html {
 
             &.bridal-party-section {
                 height: 800px;
+            }
+
+            &.countdown-section {
+                padding: 30px 0 50px;
+                text-align: center;
             }
 
             &.registry-section {
@@ -203,61 +209,5 @@ nav {
 
     .navbar-collapse {
         text-align: center;
-    }
-}
-
-@media (max-width: 580px) {
-    html > body {
-
-        section.musician-section {
-            .about-the-band {
-                margin: 0;
-
-                .music-player {
-                    padding: 0;
-                }
-
-                .cdbaby-player-container {
-                    margin: 0 auto;
-                }
-                
-                .band-links-container {
-                    margin: 0 auto;
-
-                    .band-links {
-                        max-width: 400px;
-
-                        .band-link {
-                            width: 133px;
-                            height: 133px;
-
-                            img {
-                                height: 100px;
-                                width: 100px;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
-        section.videography-section .wedding-videos {
-
-            /* Give arrow buttons more room */
-            .video-playlist-container {
-                height: 165px;
-            }
-
-            /* Hide arrow buttons and show scroll help */
-            .arrows {
-                .scroll-help {
-                    display: block;
-                }
-
-                .arrow {
-                    display: none;
-                }
-            }
-        }
     }
 }
