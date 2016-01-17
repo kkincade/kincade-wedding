@@ -5,6 +5,7 @@
 
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic);
 @import url(https://fonts.googleapis.com/css?family=Martel:400,200);
+
 html {
     font-family: 'Open Sans';
     font-weight: 300;
@@ -153,18 +154,49 @@ html {
             }
 
             &.bridal-party-section {
-                height: 800px;
+
+                // Hide our template
+                .party-member-template {
+                    display: none;
+                }
 
                 .party-members {
-                    img {
-                        height: 200px;
+                    margin: 0 5vw;
+                    padding: 20px 0;
+
+                    .party-member {
+                        padding: 0 5px 5px 0;
+                        position: relative;
+
+                        .member-info {
+                            background-color: rgba(255, 255, 255, 0.7);
+                            cursor: pointer;
+                            height: 100%;
+                            opacity: 0;
+                            padding: 30px;
+                            position: absolute;
+                            top: 0;
+                            transition: opacity 0.2s linear;
+                            width: 100%;
+
+                            .member-name {
+                                font-size: 20px;
+                                text-transform: capitalize;
+                            }
+                        }
+
+                        img {
+                            cursor: pointer;
+                            height: 100%;
+                            width: 100%;
+                        }
+
+
+                        &:hover .member-info {
+                            opacity: 1;
+                        }
                     }
                 }
-            }
-
-            &.countdown-section {
-                padding: 30px 0 50px;
-                text-align: center;
             }
 
             &.registry-section {
@@ -179,6 +211,12 @@ html {
                     background-color: rgba(0, 0, 0, 0.8);
                 }
 
+
+                h3.subtitle,
+                p.section-description {
+                    color: #CCCCCC;
+                }
+
                 .registries {
                     margin-top: 100px;
                     padding-bottom: 100px;
@@ -189,6 +227,7 @@ html {
                         cursor: pointer;
                         height: 70px;
                         margin-right: 10px;
+                        margin-top: 10px;
                         padding: 10px;
 
                         img {
@@ -238,6 +277,27 @@ html {
         -moz-user-select: none;
         -ms-user-select: none;
         user-select: none;
+    }
+}
+
+.modal-wrapper {
+    .modal-footer {
+        text-align: center;
+    }
+
+    .bridal-party-member-modal {
+
+        .modal-header {
+            border: none;
+        }
+
+        .modal-dialog {
+            padding-top: 15%;
+        }
+
+        .modal-body {
+            font-family: 'Open Sans';
+        }
     }
 }
 

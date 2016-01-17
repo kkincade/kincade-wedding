@@ -60,20 +60,24 @@
         <section id="bridalPartySection" class="bridal-party-section">
             <h2 class="section-title">Bridal Party</h2>
 
-            <h3 class="subtitle">The Guys</h3>
-            <p class="section-description">My brothas-from-other-mothas!</p>
-            <div class="row party-members">
-                <img class="col-xs-12 col-md-2 col-md-offset-1 party-member mike">
-                <img class="col-xs-12 col-md-2 party-member matt">
-                <img class="col-xs-12 col-md-2 party-member alex">
-                <img class="col-xs-12 col-md-2 party-member jake">
-                <img class="col-xs-12 col-md-2 party-member toby">
+            <!-- Bridal party member template -->
+            <div class="party-member-template">
+                <div class="col-xs-12 col-sm-6 col-md-4 {{Offset}} party-member">
+                    {{MemberImage}}
+                    <div id="{{Id}}" class="member-info">
+                        <p class="member-name">{{MemberName}}</p>
+                        <p class="member-description">{{MemberDescription}}</p>
+                    </div>
+                </div>
             </div>
+
+            <h3 class="subtitle">The Guys</h3>
+            <p class="section-description">My brothas-from-other-mothas! I'm a strong believer that the people you associate yourself with are a big indication of your own character and personality. I couldn't ask for a better group of gentlemen to call my friends and my family. I'm excited to have these five guys help me celebrate this big step in my life.</p>
+            <div class="row party-members groomsmen"></div>
 
             <h3 class="subtitle">The Ladies</h3>
             <p class="section-description"></p>
-            <div class="party-members">
-            </div>
+            <div class="row party-members bridesmaids"></div>
         </section>
 
         <section id="registrySection" class="registry-section">
@@ -83,10 +87,10 @@
                 <p class="section-description">While your presence at our wedding is gift enough, we have registered at stores for those who want to help us start off our new lives together. With a future, empty house to fill, it would be nice to have a few things that did not come from the dollar store! Honeymoon funds are also gladly accepted in whatever form of currency you wish to provide.</p>
 
                 <div class="row registries">
-                    <div class="col-xs-12 col-sm-3 col-sm-offset-3 registry">
+                    <div class="col-xs-8 col-xs-offset-2 col-sm-3 col-sm-offset-3 registry">
                         <a href="http://www.bedbathandbeyond.com/store/giftregistry/view_registry_guest.jsp?pwsToken=&amp;eventType=Wedding&amp;registryId=542547155" target="_blank"><img src="images/bed-bath-beyond.png"></a>
                     </div>
-                    <div class="col-xs-12 col-sm-3 registry">
+                    <div class="col-xs-8 col-xs-offset-2 col-sm-3 col-sm-offset-0 registry">
                         <a href="https://www.amazon.com/registry/wedding/UTM70X2V7CX4" target="_blank"><img src="images/amazon.png"></a>
                     </div>
                 </div>
@@ -95,6 +99,7 @@
 
         <section id="rsvpSection" class="rsvp-section">
             <h2 class="section-title">RSVP</h2>
+            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#rsvpModal">RSVP</button>
         </section>
 
         <section id="locationSection" class="location-section">
@@ -134,6 +139,101 @@
                 </div>
             </div>
         </nav>
+    </div>
+
+    <div class="modal-wrapper">
+        <!-- Bridal Party Member Modal -->
+        <div id="bridalPartyMemberModal" class="modal bridal-party-member-modal fade" role="dialog">
+            <div class="modal-lg modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <div class="row modal-body">
+                        <img class="col-xs-12 col-md-6 member-image" src="">
+                        <div class="col-xs-12 col-md-6">
+                            <h4 class="member-name"></h4>
+                            <h5 class="member-type"></h3>
+                            <p class="member-bio"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- RSVP Modal -->
+        <div id="rsvpModal" class="modal rsvp-modal fade" data-backdrop="static" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Kincade Wedding - RSVP</h4>
+                    </div>
+
+                    <div class="row modal-body">
+                        <div class="form-grouop attendance-radios">
+                            <div class="radio attendance-radio unselectable">
+                                <label><input type="radio" name="attendance">Will be there</label>
+                            </div>
+                            <div class="radio attendance-radio unselectable">
+                                <label><input type="radio" name="attendance">Will toast from a distance</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group guest-names">
+                            <label for="inputGuestNames">Guest Names:</label>
+                            <input type="text" class="form-control" id="inputGuestNames">
+                        </div>
+
+                        <div class="form-group adults-select">
+                            <label for="adultsSelect">Adults in Party:</label>
+                            <select class="form-control adults-select" id="adultsSelect">
+                                <option>0</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                                <option>6</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group children-select">
+                            <label for="childrenSelect">Children in Party:</label>
+                            <select class="form-control" id="childrenSelect">
+                                <option>0</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                                <option>6</option>
+                                <option>7</option>
+                                <option>8</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group has-error password">
+                            <label for="password">Password:</label>
+                            <input type="text" class="form-control" id="password">
+                        </div>
+
+                        <div class="form-group comment">
+                            <label for="comment">Comment:</label>
+                            <textarea class="form-control" rows="5" id="comment"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">RSVP</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- Load JS scripts last so page content isn't blocked -->
