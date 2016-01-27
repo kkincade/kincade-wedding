@@ -1,0 +1,21 @@
+{
+  "name": "node-wedding",
+  "description": "",
+  "main": "server.js",
+  "authors": [
+    "Kameron Kincade"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery-validation": "~1.14.0"
+  }
+}

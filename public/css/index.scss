@@ -1,0 +1,340 @@
+/* Sass commands for auto-compilation:
+ * 
+ * sass --watch index.scss:index.min.css --style compressed
+ */
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic);
+@import url(https://fonts.googleapis.com/css?family=Martel:400,200);
+
+html {
+    font-family: 'Open Sans';
+    font-weight: 300;
+
+    body {
+        /* Full-screen landing image */
+        .background-image {
+            background: url(../images/engagement-2.jpg) no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            display: block;
+            -webkit-filter: blur(2px);
+            filter: blur(2px);
+            height: 800px;
+            left: 0;
+            position: fixed;
+            right: 0;
+            z-index: -2;
+        }
+
+        .row {
+            margin: 0;
+        }
+
+        h1.page-title {
+            color: #FFFFFF;
+            font-family: 'Open Sans';
+            font-size: 8vw;
+            font-weight: 300;
+            margin: 0;
+        }
+
+        p.page-subtitle {
+            font-family: 'Open Sans';
+            font-size: 3vw;
+            font-weight: 300;
+            margin: 0;
+        }
+
+        h2.section-title {
+            font-family: 'Open Sans';
+            font-size: 6vw;
+            font-weight: 300;            
+            margin: 0;
+            padding: 20px 10px 0 10px;
+            text-align: center;
+        }
+
+        h3.subtitle {
+            color: #666666;
+            font-family: 'Open Sans';
+            font-size: 28px;
+            font-weight: 300;            
+            margin: 0 5vw 20px;
+            padding: 50px 0 5px;
+
+            &.underline {
+                border-bottom: 1px solid;
+            }
+        }
+
+        p.section-description {
+            font-size: 16px;
+            font-weight: 200;
+            line-height: 1.5em;
+            margin: 0 5vw;
+        }
+
+        section {
+            &:not(.welcome-section) {
+                background-color: #FFFFFF;
+            }
+
+            &.welcome-section {
+                height: 100vh;
+                position: relative;
+                text-align: center;
+
+                .page-description-container {
+                    margin-top: 40vh;
+                    padding-right: 10px;
+                    position: fixed;
+                    right: 0;
+                    width: 100%;
+                    z-index: -1;
+
+                    .page-title {
+                        font-size: 7vw;
+                        float: right;
+                    }
+
+                    .page-subtitle {
+                        color: #CCCCCC;
+                        font-size: 3vw;
+                    }
+                }
+
+                .countdown-container {
+                    bottom: 60px;
+                    color: #FFFFFF;
+                    font-family: 'Open Sans';
+                    font-size: 20px;
+                    margin-top: 30px;
+                    position: fixed;
+                    text-align: right;
+                    z-index: -1;
+
+                    & > div {
+                        background: #BBBBBB;
+                        display: inline-block;
+                        padding: 10px;
+                        text-align: center;
+                        width: 80px;
+
+                        & > span {
+                            background: #BBBBBB;
+                            display: inline-block;
+                            padding: 15px;
+                        }
+                    }
+
+                    .smalltext {
+                        padding-top: 5px;
+                        font-size: 12px;
+                    }
+                }
+
+                .deadline {
+                    font-style: italic;
+                    padding-top: 10px;
+                }
+            }
+
+            &.our-story-section {
+                height: 800px;
+
+                .stories {
+                    margin-top: 50px;
+
+                    .section-description {
+                        font-family: 'Martel';
+                    }
+                }
+            }
+
+            &.wedding-party-section {
+
+                // Hide our template
+                .party-member-template {
+                    display: none;
+                }
+
+                .party-members {
+                    margin: 0 5vw;
+                    padding: 20px 0;
+
+                    .party-member {
+                        padding: 0 5px 5px 0;
+                        position: relative;
+
+                        .member-info {
+                            background-color: rgba(255, 255, 255, 0.7);
+                            cursor: pointer;
+                            height: 100%;
+                            opacity: 0;
+                            padding: 30px;
+                            position: absolute;
+                            top: 0;
+                            transition: opacity 0.2s linear;
+                            width: 100%;
+
+                            .member-name {
+                                font-size: 20px;
+                                text-transform: capitalize;
+                            }
+                        }
+
+                        img {
+                            cursor: pointer;
+                            height: 100%;
+                            width: 100%;
+                        }
+
+
+                        &:hover .member-info {
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+
+            &.registry-section {
+                background: url(../images/engagement-3.jpg) no-repeat center center fixed;
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+                color: #EEEEEE;               
+
+                .black-transparent {
+                    background-color: rgba(0, 0, 0, 0.8);
+                }
+
+
+                h3.subtitle,
+                p.section-description {
+                    color: #CCCCCC;
+                }
+
+                .registries {
+                    margin-top: 100px;
+                    padding-bottom: 100px;
+                    text-align: center;
+
+                    .registry {
+                        background-color: #FFFFFF;
+                        cursor: pointer;
+                        height: 70px;
+                        margin-right: 10px;
+                        margin-top: 10px;
+                        padding: 10px;
+
+                        img {
+                            display: block;
+                            height: 50px;
+                            margin: auto;
+                        }
+                    }
+                }
+            }
+
+            &.rsvp-section {
+                height: 800px;
+            }
+
+            &.location-section {
+                // Offset by navbar height
+                margin-bottom: 50px;
+                text-align: center;
+
+                .section-title {
+                    color: #BB2222;
+                    font-size: 3vw;
+                    padding: 20px;
+                }
+
+                .google-map {
+                    height: 380px;
+                    width: 100%;
+                }
+
+                .address {
+                    padding: 20px 0;
+
+                    p {
+                        margin: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    .unselectable {
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+}
+
+.modal-wrapper {
+    font-family: 'Open Sans';
+
+    .modal-footer {
+        text-align: center;
+    }
+
+    .bridal-party-member-modal {
+
+        .modal-header {
+            border: none;
+        }
+
+        .modal-dialog {
+            padding-top: 15%;
+        }
+
+        .modal-body {
+            font-family: 'Open Sans';
+        }
+    }
+}
+
+/* Center the navbar links */
+nav {
+    .navbar-nav {
+        display: inline-block;
+        float: none;
+        vertical-align: top;
+    }
+
+    .navbar-collapse {
+        text-align: center;
+    }
+}
+
+form {
+    font-family: 'Open Sans';
+
+    .error {
+        color: #FF0000;
+        font-family: 'Open Sans';
+        font-size: 12px;
+        font-weight: 300;
+    }
+
+    &.rsvp-form {
+        .attendance-container {
+            .form-group {
+                display: inline-block;
+            }
+        }
+
+        .error-container {
+            display: none;
+        }
+    }
+}

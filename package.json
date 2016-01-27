@@ -1,0 +1,16 @@
+{
+  "name": "node-wedding",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kameron Kincade",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.3",
+    "multer": "^1.1.0"
+  }
+}
