@@ -39,7 +39,7 @@ plan.remote(function(remote) {
   remote.sudo('npm --production --prefix ~/' + tmpDir + ' install ~/' + tmpDir, {user: username});
 
   // bower install
-  // remote.sudo('bower ~/' + tmpDir + ' install ~/' + tmpDir, {user: username});
+  remote.sudo('bower install', {user: username});
 
   remote.log('Reload application');
   remote.sudo('ln -snf ~/' + tmpDir + ' ~/' + appName, { user: username });

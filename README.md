@@ -36,6 +36,7 @@ create database database-name;
 create user 'kkincade'@'localhost' identified by 'kincade-mysql';
 grant all on database-name.* to 'kkincade';
 
+Create .bowerrc file in home directory on server so calling `bower install` knows where to install components.
 
 git rm -r --cached node_modules
 git commit -am "node_modules be gone!"
