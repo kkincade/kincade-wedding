@@ -51,6 +51,7 @@ server {
         proxy_cache_bypass $http_upgrade;
     }
 }
+Restart nginx using `service nginx restart`
 
 git rm -r --cached node_modules
 git commit -am "node_modules be gone!"
@@ -60,3 +61,26 @@ git rm -r --cached bower_components
 git commit -am "bower_components be gone!"
 git push origin master
 
+// 1. Run "mysql.server start"
+// 2. Run "mysql -p"
+// 3. Enter password "kincade-mysql"
+// 4. Within mysql, run "use wedding;"
+
+/**
+ * Schema of RSVP table
+
+CREATE TABLE lu_rsvp (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    firstName VARCHAR(50) NOT NULL,
+    lastName VARCHAR(50) NOT NULL,
+    attending BOOL NOT NULL,
+    adultCount INT NOT NULL,
+    childrenCount INT NOT NULL,
+    guestNames VARCHAR(250),
+    veganCount INT NOT NULL,
+    vegetarianCount INT NOT NULL,
+    glutenFreeCount INT NOT NULL,
+    comment LONGTEXT
+);
+
+*/
