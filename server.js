@@ -183,8 +183,8 @@ var validateRsvp = function (rsvpData, response) {
 }
 
 // Set up a server-side listener for our site
-var server = app.listen(80, function () {
+var server = app.listen(80, '107.170.211.204' function () {
     var host = server.address().address;
     var port = server.address().port;
-    console.log("Site listening at http://%s:%s", host, port)
+    console.log("Site listening at http://localhost:%s", port)
 });
