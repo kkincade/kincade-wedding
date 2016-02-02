@@ -11,6 +11,7 @@ plan.target('production', [
   {
     host: '107.170.211.204',
     username: username,
+    privateKey: '/users/kameronkincade/.shh/id_rsa',
     agent: process.env.SSH_AUTH_SOCK
   }
 ]);
