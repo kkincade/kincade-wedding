@@ -283,11 +283,41 @@ html {
 .modal-wrapper {
     font-family: 'Open Sans';
 
+    hr {
+        margin-top: 5px;
+        margin-bottom: 5px;
+
+        &.last-break {
+            margin-bottom: 15px;
+        }
+    }
+
+    .section-header {
+        color: #97009A;        
+        font-family: 'Open Sans';
+        font-size: 20px;
+        font-weight: 300;
+        margin: 0;
+        padding: 10px;
+    }
+
     .modal-footer {
         text-align: center;
     }
 
-    .bridal-party-member-modal {
+    .rsvp-modal {
+        .help-text {
+            text-align: center;
+
+            p {
+                color: #97009A;
+                font-size: 0.8em;
+                font-style: italic;
+            }
+        }
+    }
+
+    .wedding-party-member-modal {
 
         .modal-header {
             border: none;

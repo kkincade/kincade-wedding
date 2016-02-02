@@ -142,8 +142,8 @@
     </div>
 
     <div class="modal-wrapper">
-        <!-- Bridal Party Member Modal -->
-        <div id="bridalPartyMemberModal" class="modal bridal-party-member-modal fade" role="dialog">
+        <!-- Wedding Party Member Modal -->
+        <div id="weddingPartyMemberModal" class="modal wedding-party-member-modal fade" role="dialog">
             <div class="modal-lg modal-dialog">
                 <!-- Modal content-->
                 <div class="modal-content">
@@ -175,6 +175,7 @@
 
                     <form id="rsvpForm" class="rsvp-form">
                         <div class="row modal-body">
+                            <p class="section-header">Attendance:</p>
                             <div class="row attendance-container">
                                 <div class="col-xs-12 col-sm-6 form-group attendance-radios">
                                     <div class="radio attendance-radio unselectable">
@@ -184,36 +185,43 @@
                                         <label><input type="radio" name="attendance" class="not-attending" value="0">Will toast from a distance</label>
                                     </div>
                                 </div>
-
                             
-                                <div class="col-xs-12 col-sm-3 form-group adults-select">
-                                    <label for="adultsSelect">Adults in Party:</label>
-                                    <select class="form-control adults-select" id="adultsSelect">
-                                        <option>0</option>
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                        <option>6</option>
-                                    </select>
-                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-3 form-group adults-select">
+                                        <label for="adultsSelect">Adults in Party:</label>
+                                        <select class="form-control adults-select" id="adultsSelect">
+                                            <option>0</option>
+                                            <option selected>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                            <option>6</option>
+                                        </select>
+                                    </div>
 
-                                <div class="col-xs-12 col-sm-3 form-group children-select">
-                                    <label for="childrenSelect">Children (5-12):</label>
-                                    <select class="form-control children-select" id="childrenSelect">
-                                        <option>0</option>
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                        <option>6</option>
-                                        <option>7</option>
-                                        <option>8</option>
-                                    </select>
+                                    <div class="col-xs-12 col-sm-3 form-group children-select">
+                                        <label for="childrenSelect">Kids (5-12yr):</label>
+                                        <select class="form-control children-select" id="childrenSelect">
+                                            <option>0</option>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                            <option>6</option>
+                                            <option>7</option>
+                                            <option>8</option>
+                                        </select>
+                                    </div>
+                                    <div class="help-text">
+                                        <p>Please include yourself in these counts.</p>
+                                    </div>
                                 </div>
                             </div>
+
+                            <hr>
+                            <p class="section-header">Guest Info:</p>
 
                             <div class="row first-last-name">
                                 <div class="col-xs-12 col-sm-6 form-group first-name" name="firstName">
@@ -225,23 +233,70 @@
                                     <label>Last Name:</label>
                                     <input type="text" name="lastName" class="form-control last-name" placeholder="Your last name">
                                 </div>
-                            </div>
 
-                            <div class="row">
                                 <div class="col-xs-12 form-group guest-names" name="guestNames">
                                     <label>Guest Names:</label>
                                     <input type="text" name="guestNames" class="form-control guest-names" placeholder="First Last, First Last, etc...">
                                 </div>
 
+                                <div class="col-xs-4 form-group">
+                                    <label for="veganSelect">Vegan:</label>
+                                    <select class="form-control vegan-select" id="veganSelect">
+                                        <option>0</option>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                        <option>6</option>
+                                        <option>7</option>
+                                        <option>8</option>
+                                    </select>
+                                </div>
+                                <div class="col-xs-4 form-group">
+                                    <label for="vegetarianSelect">Vegetarian:</label>
+                                    <select class="form-control vegetarian-select" id="vegetarianSelect">
+                                        <option>0</option>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                        <option>6</option>
+                                        <option>7</option>
+                                        <option>8</option>
+                                    </select>
+                                </div>
+                                <div class="col-xs-4 form-group">
+                                    <label for="glutenFreeSelect">Gluten-Free:</label>
+                                    <select class="form-control gluten-free-select" id="glutenFreeSelect">
+                                        <option>0</option>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                        <option>6</option>
+                                        <option>7</option>
+                                        <option>8</option>
+                                    </select>
+                                </div>
+                                <div class="help-text">
+                                    <p>Select the number of vegan, vegetarian, and gluten-free members in your party.</p>
+                                </div>
+                            </div>
+
+                            <hr class="last-break">
+
+                            <div class="row">
                                 <div class="col-xs-12 form-group password">
                                     <label for="password">Password:</label>
                                     <input type="text" class="form-control password" name="password" placeholder="Check your invitation for the password...">
                                 </div>
 
-
                                 <div class="col-xs-12 form-group comment">
                                     <label for="comment">Comment:</label>
-                                    <textarea class="form-control comment" rows="5" placeholder="Anything you want us to know?"></textarea>
+                                    <textarea class="form-control comment" rows="5" placeholder="Anything you want us to know? We'd love a favorite recipe if nothing else!"></textarea>
                                 </div>
                             </div>
 

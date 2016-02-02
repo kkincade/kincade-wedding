@@ -18,19 +18,19 @@
      */
     WebsiteControl.prototype.init = function () {
         this.templates = {
-            bridalPartyMember: this.$element.find('.party-member-template').html()
+            weddingPartyMember: this.$element.find('.party-member-template').html()
         };
 
-        var bridalPartyModal = this.$body.find('.bridal-party-member-modal');
+        var weddingPartyModal = this.$body.find('.wedding-party-member-modal');
         var rsvpModal = this.$body.find('.rsvp-modal');
 
         this.modals = {
-            bridalPartyMemberModal: { 
-                $container: bridalPartyModal,
-                $name: bridalPartyModal.find('.member-name'),
-                $type: bridalPartyModal.find('.member-type'),
-                $bio: bridalPartyModal.find('.member-bio'),
-                $image: bridalPartyModal.find('.member-image')
+            weddingPartyMemberModal: { 
+                $container: weddingPartyModal,
+                $name: weddingPartyModal.find('.member-name'),
+                $type: weddingPartyModal.find('.member-type'),
+                $bio: weddingPartyModal.find('.member-bio'),
+                $image: weddingPartyModal.find('.member-image')
             },
 
             rsvpModal: {
@@ -38,9 +38,14 @@
                 $rsvpForm: rsvpModal.find('form.rsvp-form'),
                 $radioAttending: rsvpModal.find('input:radio[name="attendance"].attending'),
                 $radioNotAttending: rsvpModal.find('input:radio[name="attendance"].not-attending'),
-                $inputGuestNames: rsvpModal.find('input.guest-names'),
                 $selectAdults: rsvpModal.find('select.adults-select'),
                 $selectChildren: rsvpModal.find('select.children-select'),
+                $inputFirstName: rsvpModal.find('input.first-name'),
+                $inputLastName: rsvpModal.find('input.last-name'),
+                $inputGuestNames: rsvpModal.find('input.guest-names'),
+                $selectVegan: rsvpModal.find('select.vegan-select'),
+                $selectVegetarian: rsvpModal.find('select.vegetarian-select'),
+                $selectGlutenFree: rsvpModal.find('select.gluten-free-select'),
                 $inputPassword: rsvpModal.find('input.password'),
                 $inputComment: rsvpModal.find('textarea.comment'),
                 $errorContainer: rsvpModal.find('.error-container'),
@@ -59,8 +64,8 @@
                 $seconds: this.$element.find('.countdown-container .seconds')
             },
 
-            // Bridal Party Section
-            $bridalPartySection: this.$element.find('section.bridal-party-section'),
+            // Wedding Party Section
+            $weddingPartySection: this.$element.find('section.wedding-party-section'),
             $groomsmenContainer: this.$element.find('div.groomsmen'),
             $bridesmaidsContainer: this.$element.find('div.bridesmaids'),
             
@@ -68,10 +73,10 @@
             $googleMap: this.$element.find('.google-map')
         };
 
-        this.bridalParty = {
+        this.weddingParty = {
             1: { 
                 type: 'Best Man', 
-                imageSrc: 'images/bridal-party/mike.png', 
+                imageSrc: 'images/wedding-party/mike.png', 
                 offset: false, 
                 name: 'Michael Spitzlberger', 
                 bio: 'Simply put, Mike and I balance each other out. He has consistently made me grow as a person and has pulled me out of my shell. We have a similar sense of humor and have always enjoyed similar activities, such as music and poker. I love Mike\'s free spirit and his dedicated work ethic, and I am honored to call him my Best Man. Mike hopes that after the wedding, Mackenzie and I will move to California and we can all three live together. Mackenzie said she needs much more convincing. ' 
@@ -79,7 +84,7 @@
 
             2: { 
                 type: 'Groomsman', 
-                imageSrc: 'images/bridal-party/matt.png', 
+                imageSrc: 'images/wedding-party/matt.png', 
                 offset: false, 
                 name: 'Matthew Glazier', 
                 bio: 'Although I\'ve only known Matt since college, we\'ve been known to finish each other\'s sentences. As members of the same band, we both share the same passion for music, especially sweet vocal harmonies. We\'ve been asked countless times if we are brothers. I admire Matt\'s enthusiasm for life and his song-writing ability. I\'m honored to have him as a groomsman.' 
@@ -87,7 +92,7 @@
 
             3: { 
                 type: 'Groomsman', 
-                imageSrc: 'images/bridal-party/jake.png', 
+                imageSrc: 'images/wedding-party/jake.png', 
                 offset: false, 
                 name: 'Jacob Harris', 
                 bio: 'I\'ve known Jake since we were both three years old. We\'ve spent countless hours together playing sports, video games, tubing and wakeboarding, and just growing up. I love Jake\'s sense of adventure and the sacrifice he makes as a firefighter. He was recently accepted on at Monument Fire Department! I\'m glad to know I\'ll have a certified firefighter at my wedding. Mackenzie can now have as many candles as she wants at the wedding!' 
@@ -95,7 +100,7 @@
 
             4: { 
                 type: 'Groomsman', 
-                imageSrc: 'images/bridal-party/alex.png', 
+                imageSrc: 'images/wedding-party/alex.png', 
                 offset: true, 
                 name: 'Alex Hill', 
                 bio: 'Alex (who I call "Al") is my brother-in-law, but more importantly my brother-by-choice. I am very proud of Al\'s service to our country through his time in the Air Force. It has also been awesome to watch him become a father over the past year. I look up to Al and appreciate all he does for my sister and their family. If only they didn\'t live so far away!' 
@@ -103,7 +108,7 @@
 
             5: { 
                 type: 'Groomsman', 
-                imageSrc: 'images/bridal-party/toby.png', 
+                imageSrc: 'images/wedding-party/toby.png', 
                 offset: false, 
                 name: 'Toby Yarrington', 
                 bio: 'I remember visiting Toby (my cousin) in London when he was born, a little over thirteen years ago. Him and I both share the middle name of "Webb", a tribute to my late grandfather. I\'ve enjoyed watching Toby grow up into a fine, young man. He reminds me a lot of myself in how he manages to juggle school, sports, and all of his other extracurriculars. More importantly, he always seems to have a genuine smile on his face while doing it. I\'m proud to have Toby with me on the big day'
@@ -111,7 +116,7 @@
 
             6: { 
                 type: 'Matron of Honor', 
-                imageSrc: 'images/bridal-party/sarah.png', 
+                imageSrc: 'images/wedding-party/sarah.png', 
                 offset: false, 
                 name: 'Sarah Von Thun', 
                 bio: 'My matron of honor. Description goes here' 
@@ -119,7 +124,7 @@
 
             7: { 
                 type: 'Maid of Honor', 
-                imageSrc: 'images/bridal-party/jen.png', 
+                imageSrc: 'images/wedding-party/jen.png', 
                 offset: false, 
                 name: 'Jen Wells', 
                 bio: 'Description goes here' 
@@ -127,7 +132,7 @@
 
             8: { 
                 type: 'Bridesmaid', 
-                imageSrc: 'images/bridal-party/victoria.png', 
+                imageSrc: 'images/wedding-party/victoria.png', 
                 offset: false, 
                 name: 'Victoria Bychkova', 
                 bio: 'Description goes here' 
@@ -135,7 +140,7 @@
 
             9: { 
                 type: 'Bridesmaid', 
-                imageSrc: 'images/bridal-party/lindsay.png', 
+                imageSrc: 'images/wedding-party/lindsay.png', 
                 offset: true, 
                 name: 'Lindsay Schultz', 
                 bio: 'Description goes here' 
@@ -143,7 +148,7 @@
 
             10:{ 
                 type: 'Bridesmaid', 
-                imageSrc: 'images/bridal-party/kayla.png', 
+                imageSrc: 'images/wedding-party/kayla.png', 
                 offset: false, 
                 name: 'Kayla Hill', 
                 bio: 'Description goes here' 
@@ -153,7 +158,7 @@
         this.initSmoothScroll();
         this.initGoogleMap();
         this.initCountdownTimer();
-        this.initBridalPartySection();
+        this.initWeddingPartySection();
         this.initRsvpSection();
     }
 
@@ -225,16 +230,16 @@
     };
 
     /**
-     * Populates the bridal party member content and images. Also defines
+     * Populates the wedding party member content and images. Also defines
      * the onclick callback method that shows the bootstrap modal for a member.
      */
-    WebsiteControl.prototype.initBridalPartySection = function () {
+    WebsiteControl.prototype.initWeddingPartySection = function () {
         var _this = this;
 
-        $.each(this.bridalParty, function (index, thisobject) {
+        $.each(this.weddingParty, function (index, thisobject) {
             var partyMember = this;
 
-            var template = _this.templates.bridalPartyMember
+            var template = _this.templates.weddingPartyMember
                 .replace('{{Id}}', index)
                 .replace('{{MemberName}}', partyMember.name.toUpperCase())
                 .replace('{{MemberDescription}}', partyMember.type.toUpperCase())
@@ -249,17 +254,17 @@
             }
         });
 
-        this.controls.$bridalPartySection.find('.member-info').on('click', function () {
+        this.controls.$weddingPartySection.find('.member-info').on('click', function () {
             // Populate member information
-            var partyMember = _this.bridalParty[this.id];
+            var partyMember = _this.weddingParty[this.id];
 
-            _this.modals.bridalPartyMemberModal.$name.text(partyMember.name.toUpperCase());
-            _this.modals.bridalPartyMemberModal.$type.text(partyMember.type.toUpperCase());
-            _this.modals.bridalPartyMemberModal.$bio.text(partyMember.bio);
-            _this.modals.bridalPartyMemberModal.$image.attr('src', partyMember.imageSrc);
+            _this.modals.weddingPartyMemberModal.$name.text(partyMember.name.toUpperCase());
+            _this.modals.weddingPartyMemberModal.$type.text(partyMember.type.toUpperCase());
+            _this.modals.weddingPartyMemberModal.$bio.text(partyMember.bio);
+            _this.modals.weddingPartyMemberModal.$image.attr('src', partyMember.imageSrc);
 
             // Show the modal
-            _this.modals.bridalPartyMemberModal.$container.modal('show');
+            _this.modals.weddingPartyMemberModal.$container.modal('show');
         });
     };
 
@@ -267,16 +272,12 @@
         var _this = this;
 
         this.modals.rsvpModal.$radioAttending.on('click', function () {
-            _this.modals.rsvpModal.$selectAdults.prop('disabled', false);
-            _this.modals.rsvpModal.$selectChildren.prop('disabled', false);
+            _this.enableDisableRsvp(true);
         });
 
+        // Disable certain form elements when they select "not-attending"
         this.modals.rsvpModal.$radioNotAttending.on('click', function () {
-            _this.modals.rsvpModal.$selectAdults.val('0');
-            _this.modals.rsvpModal.$selectChildren.val('0');
-
-            _this.modals.rsvpModal.$selectAdults.prop('disabled', 'disabled');
-            _this.modals.rsvpModal.$selectChildren.prop('disabled', 'disabled');
+            _this.enableDisableRsvp(false);
         });
 
         // Initialize the validator
@@ -285,7 +286,6 @@
                 'attendance': { required: true },
                 firstName: { required: true },
                 lastName: { required: true },
-                guestNames: { required: true },
                 password: { required: true }
             }
         });
@@ -293,6 +293,11 @@
         // Hide alert when the close button is pressed
         this.modals.rsvpModal.$errorContainer.find('a').on('click', function () {
             _this.modals.rsvpModal.$errorContainer.velocity("fadeOut", { duration: 200 });
+        });
+
+        // Clear form when the modal closes
+        this.modals.rsvpModal.$container.on('hidden.bs.modal', function(){
+            $(this).find('form')[0].reset();
         });
 
         this.modals.rsvpModal.$btnSubmitRsvp.on('click', function () {
@@ -308,10 +313,20 @@
         if (!enable) {
             this.modals.rsvpModal.$selectAdults.val('0');
             this.modals.rsvpModal.$selectChildren.val('0');
+            this.modals.rsvpModal.$inputGuestNames.val('');
+            this.modals.rsvpModal.$selectVegan.val('0');
+            this.modals.rsvpModal.$selectVegetarian.val('0');
+            this.modals.rsvpModal.$selectGlutenFree.val('0');
+        } else {
+            this.modals.rsvpModal.$selectAdults.val('1');
         }
 
         this.modals.rsvpModal.$selectAdults.prop('disabled', enable ? false : 'disabled');
         this.modals.rsvpModal.$selectChildren.prop('disabled', enable ? false : 'disabled');
+        this.modals.rsvpModal.$inputGuestNames.prop('disabled', enable ? false : 'disabled');
+        this.modals.rsvpModal.$selectVegan.prop('disabled', enable ? false : 'disabled');
+        this.modals.rsvpModal.$selectVegetarian.prop('disabled', enable ? false : 'disabled');
+        this.modals.rsvpModal.$selectGlutenFree.prop('disabled', enable ? false : 'disabled');
     };
 
     WebsiteControl.prototype.sendRsvp = function () {
@@ -319,9 +334,14 @@
         
         var dataIn = { 
             attending: parseInt(_this.$body.find('.rsvp-modal .attendance-radio input:radio[name="attendance"]:checked').val()),
-            guestNames: _this.modals.rsvpModal.$inputGuestNames.val(),
             adultCount: parseInt(_this.modals.rsvpModal.$selectAdults.val()),
             childrenCount: parseInt(_this.modals.rsvpModal.$selectChildren.val()),
+            firstName: _this.modals.rsvpModal.$inputFirstName.val(),
+            lastName: _this.modals.rsvpModal.$inputLastName.val(),
+            guestNames: _this.modals.rsvpModal.$inputGuestNames.val(),
+            veganCount: _this.modals.rsvpModal.$selectVegan.val(),
+            vegetarianCount: _this.modals.rsvpModal.$selectVegetarian.val(),
+            glutenFreeCount: _this.modals.rsvpModal.$selectGlutenFree.val(),
             password: _this.modals.rsvpModal.$inputPassword.val(),
             comment: _this.modals.rsvpModal.$inputComment.val()
         };
