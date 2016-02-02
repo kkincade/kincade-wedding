@@ -1,17 +1,16 @@
 var plan = require('flightplan');
 
-var appName = 'kincade-wedding-site';
+var appName = 'kincade-wedding';
 var username = 'kkincade';
 var startFile = 'server.js';
 
 var tmpDir = appName + '-' + new Date().getTime();
 
-// configuration (add in another server if you have more than one)
+// Configuration (add in another server if you have more than one)
 plan.target('production', [
   {
     host: '107.170.211.204',
     username: username,
-    privateKey: '/users/kameronkincade/.shh/id_rsa',
     agent: process.env.SSH_AUTH_SOCK
   }
 ]);
@@ -35,7 +34,12 @@ plan.remote(function(remote) {
   remote.rm('-rf /tmp/' + tmpDir);
 
   remote.log('Install dependencies');
+
+  // npm install
   remote.sudo('npm --production --prefix ~/' + tmpDir + ' install ~/' + tmpDir, {user: username});
+
+  // bower install
+  // remote.sudo('bower ~/' + tmpDir + ' install ~/' + tmpDir, {user: username});
 
   remote.log('Reload application');
   remote.sudo('ln -snf ~/' + tmpDir + ' ~/' + appName, { user: username });
