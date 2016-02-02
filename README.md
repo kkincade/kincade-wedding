@@ -40,3 +40,7 @@ grant all on database-name.* to 'kkincade';
 git rm -r --cached node_modules
 git commit -am "node_modules be gone!"
 git push origin master
+
+git rm -r --cached bower_components
+git commit -am "bower_components be gone!"
+git push origin master
