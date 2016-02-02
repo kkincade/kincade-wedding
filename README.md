@@ -36,7 +36,21 @@ create database database-name;
 create user 'kkincade'@'localhost' identified by 'kincade-mysql';
 grant all on database-name.* to 'kkincade';
 
-Create .bowerrc file in home directory on server so calling `bower install` knows where to install components.
+Install Nginx and modify '/etc/nginx/sites-available/default'
+server {
+    listen 80;
+        
+    server_name kincadewedding.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:8080;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+    }
+}
 
 git rm -r --cached node_modules
 git commit -am "node_modules be gone!"
@@ -45,3 +59,4 @@ git push origin master
 git rm -r --cached bower_components
 git commit -am "bower_components be gone!"
 git push origin master
+
