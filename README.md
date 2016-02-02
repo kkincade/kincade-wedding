@@ -35,3 +35,8 @@ mysql -u root -p
 create database database-name;
 create user 'kkincade'@'localhost' identified by 'kincade-mysql';
 grant all on database-name.* to 'kkincade';
+
+
+git rm -r --cached node_modules
+git commit -am "node_modules be gone!"
+git push origin master
