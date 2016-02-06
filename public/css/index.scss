@@ -146,8 +146,6 @@ html {
             }
 
             &.our-story-section {
-                height: 800px;
-
                 .stories {
                     margin-top: 50px;
 
@@ -245,6 +243,11 @@ html {
 
             &.rsvp-section {
                 height: 800px;
+                text-align: center;
+
+                .btn-rsvp {
+                    margin-top: 20px;
+                }
             }
 
             &.location-section {
@@ -361,6 +364,8 @@ form {
     }
 
     &.rsvp-form {
+        font-size: 12px;
+
         .attendance-container {
             .form-group {
                 display: inline-block;
@@ -393,6 +398,11 @@ form {
                 // z-index: -2;
             }
 
+            h2.section-title {
+                font-size: 40px;
+                padding-top: 40px;
+            }
+
             section {
                 &.welcome-section {
                     .countdown-container {
@@ -407,6 +417,21 @@ form {
                         }
                     }
                 }
+
+                &.location-section {
+                    h2.section-title {
+                        font-size: 18px;
+                        padding-top: 40px;
+                    }
+                }
+            }
+        }
+    }
+
+    form {
+        &.rsvp-form {
+            .col-xs-4 {
+                font-size: 9px;
             }
         }
     }
