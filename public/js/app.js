@@ -11,6 +11,13 @@
         this.$body = $('body');
 
         this.init();
+
+        var bg = $('.background-image');
+        jQuery(window).resize("resizeBackground");
+        function resizeBackground() {
+            bg.height(jQuery(window).height());
+        }
+        resizeBackground();
     };
 
     /**
