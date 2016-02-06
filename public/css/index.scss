@@ -18,11 +18,14 @@ html {
         /* Full-screen landing image */
         .background-image {
             background: url(../images/engagement-2.jpg) no-repeat center center fixed;
+            -webkit-background-size: 100%;
+            -moz-background-size: 100%;
+            -o-background-size: 100%;
+            background-size: 100%;
             -webkit-background-size: cover;
             -moz-background-size: cover;
             -o-background-size: cover;
             background-size: cover;
-            display: block;
             -webkit-filter: blur(2px);
             filter: blur(2px);
             height: 100%;
@@ -130,7 +133,7 @@ html {
                         & > span {
                             background: #BBBBBB;
                             display: inline-block;
-                            padding: 15px;
+                            padding: 15px 10px;
                         }
                     }
 
@@ -370,6 +373,45 @@ form {
 
         .error-container {
             display: none;
+        }
+    }
+}
+
+@media (max-width: 700px) {
+    html {
+
+        body {
+
+            .background-image {
+                // background: url(../images/engagement-2.jpg) no-repeat center center fixed;
+                // -webkit-background-size: cover;
+                // -moz-background-size: cover;
+                // -o-background-size: cover;
+                // background-size: cover;
+                // -webkit-filter: blur(2px);
+                // filter: blur(2px);
+                // height: 100%;
+                // left: 0;
+                // position: fixed;
+                // right: 0;
+                // z-index: -2;
+            }
+
+            section {
+                &.welcome-section {
+                    .countdown-container {
+                        text-align: center;
+
+                        & > div {
+                            width: 65px;
+
+                            & > span {
+                                padding: 15px 5px;
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }
