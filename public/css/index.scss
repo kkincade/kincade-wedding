@@ -384,18 +384,7 @@ form {
         body {
 
             .background-image {
-                // background: url(../images/engagement-2.jpg) no-repeat center center fixed;
-                // -webkit-background-size: cover;
-                // -moz-background-size: cover;
-                // -o-background-size: cover;
-                // background-size: cover;
-                // -webkit-filter: blur(2px);
-                // filter: blur(2px);
-                // height: 100%;
-                // left: 0;
-                // position: fixed;
-                // right: 0;
-                // z-index: -2;
+
             }
 
             h2.section-title {
@@ -424,14 +413,6 @@ form {
                         padding-top: 40px;
                     }
                 }
-            }
-        }
-    }
-
-    form {
-        &.rsvp-form {
-            .col-xs-4 {
-                font-size: 9px;
             }
         }
     }
