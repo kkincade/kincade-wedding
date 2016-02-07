@@ -96,7 +96,7 @@ var sendRsvpEmail = function (rsvpData) {
         }
     });
 
-    
+
 
     var rsvpString = 'Name: ' + fullName;
     rsvpString += '\nAttending: ' + ((rsvpData.attending === 1) ? 'Yes' : 'No');
@@ -170,7 +170,7 @@ var validateRsvp = function (rsvpData, response) {
     }
 
     // Password
-    if (typeof rsvpData.password === 'undefined' || rsvpData.password.toLowerCase() !== 'kincade-schultz-2016') {
+    if (typeof rsvpData.password === 'undefined' || rsvpData.password.toLowerCase() !== 'kincade-2016') {
         responseData.message = 'The password you entered is incorrect.';
         return responseData;
     }
