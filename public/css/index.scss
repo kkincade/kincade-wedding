@@ -17,13 +17,11 @@ html {
     body {
         /* Full-screen landing image */
         .background-image {
-            background: url(../images/engagement-1.jpg) no-repeat center center fixed;
+            background: url(../images/engagement-1.jpg) no-repeat center;
             -webkit-background-size: cover;
             -moz-background-size: cover;
             -o-background-size: cover;
             background-size: cover;
-            -webkit-filter: blur(2px);
-            filter: blur(2px);
             height: 100%;
             left: 0;
             position: fixed;
@@ -202,7 +200,7 @@ html {
             }
 
             &.registry-section {
-                background: url(../images/engagement-2.jpg) no-repeat center center fixed;
+                background: url(../images/engagement-2.jpg) no-repeat center fixed;
                 -webkit-background-size: cover;
                 -moz-background-size: cover;
                 -o-background-size: cover;
@@ -266,10 +264,6 @@ html {
                         position: relative;
                         top: -40px;
                         width: 100%;
-
-                        &:hover {
-                            cursor: pointer;
-                        }
 
                         p {
                             color: #AAAAAA;
@@ -357,7 +351,7 @@ html {
 
             p {
                 color: #97009A;
-                font-size: 0.8em;
+                font-size: 1.0em;
                 font-style: italic;
             }
         }
@@ -403,8 +397,6 @@ form {
     }
 
     &.rsvp-form {
-        font-size: 12px;
-
         .attendance-container {
             .form-group {
                 display: inline-block;
@@ -423,7 +415,10 @@ form {
         body {
 
             .background-image {
-
+                -webkit-background-size: auto 100%;
+                -moz-background-size: auto 100%;
+                -o-background-size: auto 100%;
+                background-size: auto 100%;
             }
 
             h2.section-title {
@@ -444,6 +439,13 @@ form {
                             }
                         }
                     }
+                }
+
+                &.registry-section {
+                    -webkit-background-size: auto 100%;
+                    -moz-background-size: auto 100%;
+                    -o-background-size: auto 100%;
+                    background-size: auto 100%;
                 }
 
                 &.location-section {
