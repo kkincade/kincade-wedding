@@ -76,7 +76,7 @@
         this.weddingParty = {
             1: {
                 type: 'Best Man',
-                imageSrc: 'images/wedding-party/mike.png',
+                imageSrc: 'images/wedding-party/mike.jpg',
                 offset: false,
                 name: 'Michael Spitzlberger',
                 bio: 'Simply put, Mike and I balance each other out. He has consistently made me grow as a person and has pulled me out of my shell. We have a similar sense of humor and have always enjoyed similar activities, such as music and poker. I love Mike\'s free spirit and his dedicated work ethic, and I am honored to call him my Best Man. Mike hopes that after the wedding, Mackenzie and I will move to California and we can all three live together. Mackenzie said she needs much more convincing. '
@@ -84,7 +84,7 @@
 
             2: {
                 type: 'Groomsman',
-                imageSrc: 'images/wedding-party/matt.png',
+                imageSrc: 'images/wedding-party/matt.jpg',
                 offset: false,
                 name: 'Matthew Glazier',
                 bio: 'Although I\'ve only known Matt since college, we\'ve been known to finish each other\'s sentences. As members of the same band, we both share the same passion for music, especially sweet vocal harmonies. We\'ve been asked countless times if we are brothers. I admire Matt\'s enthusiasm for life and his song-writing ability. I\'m honored to have him as a groomsman.'
@@ -92,7 +92,7 @@
 
             3: {
                 type: 'Groomsman',
-                imageSrc: 'images/wedding-party/jake.png',
+                imageSrc: 'images/wedding-party/jake.jpg',
                 offset: false,
                 name: 'Jacob Harris',
                 bio: 'I\'ve known Jake since we were both three years old. We\'ve spent countless hours together playing sports, video games, tubing and wakeboarding, and just growing up. I love Jake\'s sense of adventure and the sacrifice he makes as a firefighter. He was recently accepted on at Monument Fire Department! I\'m glad to know I\'ll have a certified firefighter at my wedding. Mackenzie can now have as many candles as she wants at the wedding!'
@@ -100,7 +100,7 @@
 
             4: {
                 type: 'Groomsman',
-                imageSrc: 'images/wedding-party/alex.png',
+                imageSrc: 'images/wedding-party/alex.jpg',
                 offset: true,
                 name: 'Alex Hill',
                 bio: 'Alex (who I call "Al") is my brother-in-law, but more importantly my brother-by-choice. I am very proud of Al\'s service to our country through his time in the Air Force. It has also been awesome to watch him become a father over the past year. I look up to Al and appreciate all he does for my sister and their family. I love playing golf, grilling ribs, and hanging out with Al. If only he didn\'t live so far away!'
@@ -108,7 +108,7 @@
 
             5: {
                 type: 'Groomsman',
-                imageSrc: 'images/wedding-party/toby.png',
+                imageSrc: 'images/wedding-party/toby.jpg',
                 offset: false,
                 name: 'Toby Yarrington',
                 bio: 'I remember visiting Toby (my cousin) in London when he was born, a little over thirteen years ago. Him and I both share the middle name of "Webb", a tribute to my late grandfather. I\'ve enjoyed watching Toby grow up into a fine, young man. He reminds me a lot of myself in how he manages to juggle school, sports, and all of his other extracurriculars. More importantly, he always seems to have a genuine smile on his face while doing it. I\'m proud to have Toby with me on the big day'
@@ -116,7 +116,7 @@
 
             6: {
                 type: 'Matron of Honor',
-                imageSrc: 'images/wedding-party/sarah.png',
+                imageSrc: 'images/wedding-party/sarah.jpg',
                 offset: false,
                 name: 'Sarah Von Thun',
                 bio: 'There are some people you meet and instantly click with. Sarah and I have not known each other for very long, but I know she\'ll be one of my best friends for life. From sleepovers to double dates, this girl makes my life a bit more fun every day! She\'s crazy and outgoing, but level-headed when I need girl advice. We met and became friends through the band, and soon she\'ll be stuck fan-girling with me forever!'
@@ -124,7 +124,7 @@
 
             7: {
                 type: 'Maid of Honor',
-                imageSrc: 'images/wedding-party/jen.png',
+                imageSrc: 'images/wedding-party/jen.jpg',
                 offset: false,
                 name: 'Jen Wells',
                 bio: 'I met Jen while in college. Our friendship grew over sand castles and Dunkin Donuts dates, and I\'m proud to call her one of my best friends. We\'ve been through quite a few ups and downs in the few years we\'ve known each other, and they\'ve only made us closer. I\'m still trying to convince her to move closer to me, but having a place to stay in Florida is always nice as well!'
@@ -132,7 +132,7 @@
 
             8: {
                 type: 'Bridesmaid',
-                imageSrc: 'images/wedding-party/victoria.png',
+                imageSrc: 'images/wedding-party/victoria.jpg',
                 offset: false,
                 name: 'Victoria Bychkova',
                 bio: 'I met Victoria when I started cosmetology school. Throughout the last year and a half we spent many hours together between Paul Mitchell and P.F. Changs. Since we\'ve met, I think I\'ve spent more time with her than I have with Kam! Through all of the laughter and tears she\'s become one of my favorite people. I love that we\'re both in the same career and can help push each other to new levels. She\'s going to make an amazing stylist, and it doesn\'t hurt to have some help on my wedding day.'
@@ -140,7 +140,7 @@
 
             9: {
                 type: 'Bridesmaid',
-                imageSrc: 'images/wedding-party/lindsay.png',
+                imageSrc: 'images/wedding-party/lindsay.jpg',
                 offset: true,
                 name: 'Lindsay Schultz',
                 bio: 'She might be my sister-in-law by title, but Lindsay so much more than that to me. Since she joined our family, I\'ve loved growing closer to her as a sister and friend. We\'re both very introverted, so the friendship started slow. But through several double dates and a wedding of her own, we\'ve become much closer and I\'m excited to see our families grow together.'
@@ -148,7 +148,7 @@
 
             10:{
                 type: 'Bridesmaid',
-                imageSrc: 'images/wedding-party/kayla.png',
+                imageSrc: 'images/wedding-party/kayla.jpg',
                 offset: false,
                 name: 'Kayla Hill',
                 bio: 'I greatly admire Kayla in many ways. She has a very difficult career and somehow balances her marriage and a baby at home. Since the start of my relationship with Kam, I haven\'t been able to spend as much time getting to know Kayla as I would have liked. But through the distance, she\'s made an incredible effort to include me in the family. She\'s an extraordinary pilot and an even better wife and mom. I\'m excited to add a sister and join the Kincade family!'
