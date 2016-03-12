@@ -15,7 +15,7 @@ html {
     }
 
     body {
-        /* Full-screen landing image */
+        // Full-screen landing image
         .background-image {
             background: url(../images/engagement-1.jpg) no-repeat center;
             -webkit-background-size: cover;
@@ -271,12 +271,15 @@ html {
                             vertical-align: middle;
                         }
                     }
+
+
                 }
 
                 .rsvp-button-container {
                     text-align: center;
 
-                    .btn-rsvp {
+                    .btn-rsvp,
+                    .btn-contact-us {
                         margin: 20px 0 40px;
                     }
                 }
@@ -304,6 +307,19 @@ html {
 
                     p {
                         margin: 0;
+                    }
+                }
+
+                .email-link {
+                    p {
+                        background-color: #666666;
+                        color: #EEEEEE;
+                        padding: 10px 15px;
+
+                        &:hover {
+                            cursor: pointer;
+                            background-color: #888888;
+                        }
                     }
                 }
             }

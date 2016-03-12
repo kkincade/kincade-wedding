@@ -69,6 +69,9 @@
             $groomsmenContainer: this.$element.find('div.groomsmen'),
             $bridesmaidsContainer: this.$element.find('div.bridesmaids'),
 
+            // Details Section
+            $btnContactUs: this.$element.find('.btn.btn-contact-us'),
+
             // Location Section
             $googleMap: this.$element.find('.google-map')
         };
@@ -159,6 +162,7 @@
         this.initGoogleMap();
         this.initCountdownTimer();
         this.initWeddingPartySection();
+        this.initDetailsSection();
         this.initRsvpSection();
     }
 
@@ -226,6 +230,23 @@
                     return false;
                 }
             }
+        });
+    };
+
+    /**
+     * Initializes the Details section.
+     */
+    WebsiteControl.prototype.initDetailsSection = function () {
+
+        // Callback for "Contact Us" button
+        this.controls.$btnContactUs.on('click', function () {
+            // Obfuscate email address to help avoid spam messages.
+            var emailName = String.fromCharCode(107, 105, 110, 99, 97, 100, 101)      // kincade
+                          + String.fromCharCode(46, 115, 99, 104, 117, 108, 116, 122) // .schultz
+                          + String.fromCharCode(46, 50, 48, 49, 54)                // .2016
+                          + String.fromCharCode(64, 103, 109, 97, 105, 108)           // @gmail
+                          + String.fromCharCode(46, 99, 111, 109);                     // .com
+            window.location.href = 'mailto:' + emailName;
         });
     };
 

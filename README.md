@@ -21,12 +21,23 @@ sudo passwd <user-name>
 7. Run `exit` and then log back in as the newly created user `ssh <user-name>@IP.ADDRESS`
 
 8. Create an SSH folder using `mkdir .ssh` and the `exit` once more.
+
 9. Push your SSH key from your local machine to the new DigitalOcean server by running:
 ```
 scp ~/.ssh/id_rsa.pub <user-name>@IP.ADDRESS:~/.ssh/authorized_keys
 ```
   - If you don't have SSH keys already, visit [Github's instructions](https://help.github.com/articles/generating-an-ssh-key/) for generating them.
   - You also need to add them to your *ssh-agent* using `eval "$(ssh-agent -s)"` and `ssh-add ~/.ssh/id_rsa`
+
+### Running Locally
+
+1. Change directories to the *kincade-wedding* project.
+
+2. Run `node server.js` and visit *localhost:8080* in your browser.
+
+3. To debug server side code, open a new terminal and run `node-debug server.js` in addition to the node command in step 2. You must have the *node-inspector* npm package installed for this to work. It should open a browser window with developer tools that allow you to debug the server side code.
+
+4. For auto-compilation of SCSS, cd to the CSS folder in the project and run `sass --watch index.scss:index.min.css --style compressed`. When a change is made to the CSS, this will automatically minify the file.
 
 ### Deployment
 
