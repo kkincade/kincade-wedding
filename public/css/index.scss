@@ -291,6 +291,7 @@ html {
                     .btn-rsvp,
                     .btn-contact-us {
                         margin: 20px 0 40px;
+                        min-width: 128px;
                     }
                 }
             }
@@ -418,6 +419,10 @@ nav {
         display: inline-block;
         float: none;
         vertical-align: top;
+
+        a {
+            cursor: pointer;
+        }
     }
 
     .navbar-collapse {
