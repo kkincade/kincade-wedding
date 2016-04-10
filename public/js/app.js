@@ -55,6 +55,7 @@
 
         this.controls = {
             $backgroundImage: $('.background-image'),
+            $rsvpSuccessAlert: this.$body.find('.rsvp-alert'),
 
             countdownTimer: {
                 $container: this.$element.find('.countdown-container'),
@@ -379,6 +380,8 @@
             success: function (result) {
                 if (result.success) {
                     _this.modals.rsvpModal.$container.modal('hide');
+
+                    _this.controls.$rsvpSuccessAlert.fadeIn();
                 } else {
                     _this.modals.rsvpModal.$errorContainer.find('.error-message').text(result.message);
                     _this.modals.rsvpModal.$errorContainer.velocity("fadeIn", { duration: 200 });

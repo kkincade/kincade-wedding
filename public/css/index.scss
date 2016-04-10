@@ -1,10 +1,20 @@
-/* Sass commands for auto-compilation:
- *
- * sass --watch index.scss:index.min.css --style compressed
- */
+// Sass commands for auto-compilation: `sass --watch index.scss:index.min.css --style compressed`
 
+// Fonts
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic);
 @import url(https://fonts.googleapis.com/css?family=Martel:400,200);
+
+// Colors
+$white: #FFFFFF;
+$off-white: #EEEEEE;
+$grey: #AAAAAA;
+$black-20: #CCCCCC;
+$black-40: #888888;
+$black-60: #666666;
+$black-80: #333333;
+$black: #000000;
+$red: #BB2222;
+$purple: #97009A;
 
 html {
     font-family: 'Open Sans';
@@ -34,7 +44,7 @@ html {
         }
 
         h1.page-title {
-            color: #FFFFFF;
+            color: $white;
             font-family: 'Open Sans';
             font-size: 8vw;
             font-weight: 300;
@@ -58,7 +68,7 @@ html {
         }
 
         h3.subtitle {
-            color: #666666;
+            color: $black-60;
             font-family: 'Open Sans';
             font-size: 28px;
             font-weight: 300;
@@ -79,7 +89,7 @@ html {
 
         section {
             &:not(.welcome-section) {
-                background-color: #FFFFFF;
+                background-color: $white;
             }
 
             &.welcome-section {
@@ -101,14 +111,14 @@ html {
                     }
 
                     .page-subtitle {
-                        color: #CCCCCC;
+                        color: $black-20;
                         font-size: 3vw;
                     }
                 }
 
                 .countdown-container {
                     bottom: 60px;
-                    color: #FFFFFF;
+                    color: $white;
                     font-family: 'Open Sans';
                     font-size: 20px;
                     margin-top: 30px;
@@ -117,7 +127,7 @@ html {
                     z-index: -1;
 
                     & > div {
-                        background: #BBBBBB;
+                        background: $black-20;
                         border-radius: 5px;
                         display: inline-block;
                         padding: 10px;
@@ -125,7 +135,7 @@ html {
                         width: 80px;
 
                         & > span {
-                            background: #BBBBBB;
+                            background: $black-20;
                             display: inline-block;
                             padding: 15px 10px;
                         }
@@ -169,7 +179,7 @@ html {
                         position: relative;
 
                         .member-info {
-                            background-color: rgba(255, 255, 255, 0.7);
+                            background-color: rgba($white, 0.7);
                             cursor: pointer;
                             height: 100%;
                             opacity: 0;
@@ -205,16 +215,16 @@ html {
                 -moz-background-size: cover;
                 -o-background-size: cover;
                 background-size: cover;
-                color: #EEEEEE;
+                color: $off-white;
 
                 .black-transparent {
-                    background-color: rgba(0, 0, 0, 0.8);
+                    background-color: rgba($black, 0.8);
                 }
 
 
                 h3.subtitle,
                 p.section-description {
-                    color: #CCCCCC;
+                    color: $black-20;
                 }
 
                 .registries {
@@ -223,7 +233,7 @@ html {
                     text-align: center;
 
                     .registry {
-                        background-color: #FFFFFF;
+                        background-color: $white;
                         cursor: pointer;
                         height: 70px;
                         margin-right: 10px;
@@ -258,7 +268,7 @@ html {
                     }
 
                     .engagement-pictures-link {
-                        background-color: rgba(0, 0, 0, 0.8);
+                        background-color: rgba($black, 0.8);
                         display: table;
                         height: 40px;
                         position: relative;
@@ -266,7 +276,7 @@ html {
                         width: 100%;
 
                         p {
-                            color: #AAAAAA;
+                            color: $grey;
                             display: table-cell;
                             vertical-align: middle;
                         }
@@ -286,13 +296,13 @@ html {
             }
 
             &.location-section {
-                border-top: 1px solid #666666;
+                border-top: 1px solid $black-60;
                 // Offset by navbar height
                 margin-bottom: 50px;
                 text-align: center;
 
                 .section-title {
-                    color: #BB2222;
+                    color: $red;
                     font-size: 3vw;
                     padding: 20px 20px 0;
                 }
@@ -312,17 +322,30 @@ html {
 
                 .email-link {
                     p {
-                        background-color: #666666;
-                        color: #EEEEEE;
+                        background-color: $black-60;
+                        color: $off-white;
                         padding: 10px 15px;
 
                         &:hover {
                             cursor: pointer;
-                            background-color: #888888;
+                            background-color: $black-40;
                         }
                     }
                 }
             }
+        }
+
+        .rsvp-alert {
+            $alert-width: 450px;
+
+            display: none;
+            left: calc(50% - #{$alert-width / 2});
+            margin-top: 18px;
+            position: fixed;
+            text-align: center;
+            top: 0;
+            width: $alert-width;
+            z-index: 1000;
         }
     }
 
@@ -349,7 +372,7 @@ html {
     }
 
     .section-header {
-        color: #97009A;
+        color: $purple;
         font-family: 'Open Sans';
         font-size: 20px;
         font-weight: 300;
@@ -366,7 +389,7 @@ html {
             text-align: center;
 
             p {
-                color: #97009A;
+                color: $purple;
                 font-size: 1.0em;
                 font-style: italic;
             }
@@ -406,7 +429,7 @@ form {
     font-family: 'Open Sans';
 
     .error {
-        color: #FF0000;
+        color: $red;
         font-family: 'Open Sans';
         font-size: 12px;
         font-weight: 300;
