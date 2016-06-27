@@ -92,7 +92,7 @@ var sendRsvpEmail = function (rsvpData) {
         service: 'gmail',
         auth: {
             user: 'kincade.schultz.2016@gmail.com',
-            pass: 'WeddingRsvp@08#92$'
+            pass: 'WeddingRsvp@88#92$'
         }
     });
 
