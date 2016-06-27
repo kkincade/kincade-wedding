@@ -127,3 +127,12 @@ CREATE TABLE lu_rsvp (
     comment LONGTEXT
 );
 ```
+
+Get list of RSVPs:
+```
+ssh kkincade@107.170.211.204
+sudo /etc/init.d/mysql start;
+mysql -p;
+use wedding;
+select * from lu_rsvp;
+```
